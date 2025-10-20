@@ -69,3 +69,23 @@ factory_bot_rails
 rspec-rails 
 
 capybara 
+
+### 画面遷移図 
+https://www.figma.com/design/oRpEWyPNxSvg4Jfrv3n4PV/lanchoice?node-id=0-1&p=f&t=6NEKW0OslSdO6Mv6-0 
+
+ 
+
+### READMEに記載した機能 
+- [x] カテゴリ選択機能 
+- [x] 料理名一覧機能 
+- [x] 選択記録機能 
+- [x] ユーザー認証 
+- [x] 料理名による絞り機能 
+- [x] ドロップダウン用検索機能 
+- [x] 投稿機能 
+- [x] フィード/タイムライン機能 
+
+### 未ログインでも閲覧または利用できるページ 
+以下の項目は適切に未ログインでも閲覧または利用できる画面遷移になっているか？ 
+- [x] カテゴリ選択機能 
+- [x] 料理名一覧機能 
