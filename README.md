@@ -89,3 +89,7 @@ https://www.figma.com/design/oRpEWyPNxSvg4Jfrv3n4PV/lanchoice?node-id=0-1&p=f&t=
 以下の項目は適切に未ログインでも閲覧または利用できる画面遷移になっているか？ 
 - [x] カテゴリ選択機能 
 - [x] 料理名一覧機能 
+
+### ER図
+
+https://drive.google.com/file/d/1OWYkJ-UT4m9U46u6tG7PyPQplBXyObgU/view?usp=sharing
