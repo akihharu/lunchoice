@@ -15,8 +15,9 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with: ruby-version: '3.3.0'
-          bundler-cache: true
+        with: 
+        ruby-version: '3.3.0'
+        bundler-cache: true
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
@@ -33,8 +34,9 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with: ruby-version: '3.3.0'
-          bundler-cache: true
+        with: 
+        ruby-version: '3.3.0'
+        bundler-cache: true
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bundle exec bin/importmap audit
@@ -49,8 +51,9 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with: ruby-version: '3.3.0'
-          bundler-cache: true
+        with: 
+        ruby-version: '3.3.0'
+        bundler-cache: true
 
       - name: Prepare RuboCop cache
         uses: actions/cache@v4
@@ -92,8 +95,9 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with: ruby-version: '3.3.0'
-          bundler-cache: true
+        with: 
+        ruby-version: '3.3.0'
+        bundler-cache: true
 
       - name: Run tests
         env:
@@ -131,8 +135,9 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with: ruby-version: '3.3.0'
-          bundler-cache: true
+        with: 
+        ruby-version: '3.3.0'
+        bundler-cache: true
 
       - name: Run System Tests
         env:
