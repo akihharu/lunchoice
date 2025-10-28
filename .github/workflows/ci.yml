@@ -15,15 +15,15 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with:
+        with: ruby-version: '3.3.0'
           bundler-cache: true
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
-      
+
       - name: Scan for known security vulnerabilities in gems used
         run: bin/bundler-audit
-      
+
   scan_js:
     runs-on: ubuntu-latest
 
@@ -33,11 +33,11 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with:
+        with: ruby-version: '3.3.0'
           bundler-cache: true
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
-        run: bin/importmap audit
+        run: bundle exec bin/importmap audit
 
   lint:
     runs-on: ubuntu-latest
@@ -49,7 +49,7 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with:
+        with: ruby-version: '3.3.0'
           bundler-cache: true
 
       - name: Prepare RuboCop cache
@@ -61,7 +61,6 @@ jobs:
           key: rubocop-${{ runner.os }}-${{ env.DEPENDENCIES_HASH }}-${{ github.ref_name == github.event.repository.default_branch && github.run_id || 'default' }}
           restore-keys: |
             rubocop-${{ runner.os }}-${{ env.DEPENDENCIES_HASH }}-
-
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
@@ -93,7 +92,7 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with:
+        with: ruby-version: '3.3.0'
           bundler-cache: true
 
       - name: Run tests
@@ -132,7 +131,7 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with:
+        with: ruby-version: '3.3.0'
           bundler-cache: true
 
       - name: Run System Tests
@@ -150,3 +149,4 @@ jobs:
           name: screenshots
           path: ${{ github.workspace }}/tmp/screenshots
           if-no-files-found: ignore
+          
