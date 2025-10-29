@@ -11,13 +11,13 @@
 
     <%# 💡 一時的なスタイルを追加してレイアウトを確認します %>
     <style>
-      .container { max-width: 960px; margin: 0 auto; padding: 0 15px; }
-      header { background-color: #f8f9fa; padding: 15px 0; border-bottom: 1px solid #e0e0e0; }
-      header a { text-decoration: none; color: #333; margin-left: 20px; }
-      header h1 a { color: #333; }
-      header nav { float: right; }
+      .container { max-width: 1920px; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; }
+      header { background-color: #FF9500; padding: 20px 0; }
+      header h1 {margin: 0; padding: 0 10px; }
+      header a { text-decoration: none; color: #000000ff; }
       main { max-width: 960px; margin: 20px auto; padding: 20px; min-height: 70vh; }
       footer { background-color: #343a40; color: white; text-align: center; padding: 15px 0; margin-top: 30px; }
+      
     </style>
 
   </head>
@@ -27,13 +27,31 @@
     <%# 1. ヘッダー %>
     <header>
       <div class="container">
-        <h1><a href="/">LUNCHOICE</a></h1>
+        <h1>
+          <a href="/" style="text-decoration: none; color: #000000ff;">LUNCHOICE</a>
+        </h1>
         <nav>
           <%# 今後、サインアップ/ログインリンクを配置 %>
-          <a href="/login">ログイン</a>
-          <a href="/signup">サインアップ</a>
+          <a href="/login" style="
+            padding: 5px 10px; 
+            border: 1px solid #000; 
+            border-radius: 5px; 
+            margin-right: 10px;
+            background-color: #ffe110; 
+            color: black !important;
+            ">
+            ログイン
+          </a>
+          <a href="/signup" style="
+            padding: 5px 10px; 
+            border: 1px solid #000; 
+            border-radius: 5px; 
+            background-color: #ffe110; 
+            color: black !important
+          ">
+          サインアップ
+          </a>
         </nav>
-        <div style="clear: both;"></div> <%# float解除用 %>
       </div>
     </header>
     
