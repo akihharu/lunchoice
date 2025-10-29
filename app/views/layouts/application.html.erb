@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>LUNCHOICE</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <%# 💡 一時的なスタイルを追加してレイアウトを確認します %>
+    <style>
+      .container { max-width: 960px; margin: 0 auto; padding: 0 15px; }
+      header { background-color: #f8f9fa; padding: 15px 0; border-bottom: 1px solid #e0e0e0; }
+      header a { text-decoration: none; color: #333; margin-left: 20px; }
+      header h1 a { color: #333; }
+      header nav { float: right; }
+      main { max-width: 960px; margin: 20px auto; padding: 20px; min-height: 70vh; }
+      footer { background-color: #343a40; color: white; text-align: center; padding: 15px 0; margin-top: 30px; }
+    </style>
+
   </head>
 
   <body>
-    <%= yield %>
+    <%# ----------------------- %>
+    <%# 1. ヘッダー %>
+    <header>
+      <div class="container">
+        <h1><a href="/">LUNCHOICE</a></h1>
+        <nav>
+          <%# 今後、サインアップ/ログインリンクを配置 %>
+          <a href="/login">ログイン</a>
+          <a href="/signup">サインアップ</a>
+        </nav>
+        <div style="clear: both;"></div> <%# float解除用 %>
+      </div>
+    </header>
+    
+    <%# 2. ページ固有の内容を表示 (Top#indexの内容がここに入る) %>
+    <main>
+      <%= yield %>
+    </main>
+    
+    <%# 3. フッター %>
+    <footer>
+      <div class="container">
+        <p>&copy; <%= Time.current.year %> LUNCHOICE. All rights reserved.</p>
+      </div>
+    </footer>
+    <%# ----------------------- %>
   </body>
 </html>

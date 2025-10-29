@@ -21,3 +21,23 @@ Processing by TopController#index as HTML
 Completed 200 OK in 249ms (Views: 231.3ms | ActiveRecord: 0.0ms | Allocations: 109892)
 
 
+Started GET "/" for 172.29.0.1 at 2025-10-29 18:27:45 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 97)
+  Rendered layout layouts/application.html.erb (Duration: 125.1ms | Allocations: 22640)
+Completed 200 OK in 141ms (Views: 133.0ms | ActiveRecord: 0.0ms | Allocations: 23549)
+
+
+Started GET "/login" for 172.29.0.1 at 2025-10-29 18:32:11 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/signup" for 172.29.0.1 at 2025-10-29 18:32:12 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
