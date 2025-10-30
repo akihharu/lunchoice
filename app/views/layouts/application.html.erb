@@ -9,11 +9,13 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
     <%# 💡 一時的なスタイルを追加してレイアウトを確認します %>
     <style>
       .container { max-width: 1920px; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; }
       header { background-color: #FF9500; padding: 20px 0; }
-      header h1 {margin: 0; padding: 0 10px; }
+      header h1 {margin: 0; padding: 0 5px; }
       header a { text-decoration: none; color: #000000ff; }
       main { max-width: 960px; margin: 20px auto; padding: 20px; min-height: 70vh; }
       footer { background-color: #343a40; color: white; text-align: center; padding: 15px 0; margin-top: 30px; }
@@ -28,7 +30,7 @@
     <header>
       <div class="container">
         <h1>
-          <a href="/" style="text-decoration: none; color: #000000ff;">LUNCHOICE</a>
+          <a href="/" style="text-decoration: none; font-family: 'Courgette', cursive; font-weight: 400; font-style: normal; color: #000000ff;">lunchoice</a>
         </h1>
         <nav>
           <%# 今後、サインアップ/ログインリンクを配置 %>
