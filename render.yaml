@@ -9,7 +9,9 @@ services:
     
     envVars:
       - key: DATABASE_URL
-        fromDatabase: lunchoice-db
+        fromDatabase:
+          name: lunchchoice-db
+          property: connectionString
 
       - key: RAILS_MASTER_KEY
         value: "dummy_master_key_set_on_render_ui" 
