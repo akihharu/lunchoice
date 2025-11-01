@@ -15,13 +15,11 @@ services:
     
     # 接続に必要な環境変数の定義
     envVars:
-      # Renderの仕様変更に対応した、推奨される参照方法に変更します。
       - key: DATABASE_URL
-        fromDatabase: lunchoice-db # DB名を指定するだけでRenderが自動で注入
+        fromDatabase: lunchoice-db #
       
-      # これはRenderのダッシュボードで設定するのが最も安全で確実です。
-      # - key: RAILS_MASTER_KEY
-      #   value: "" # ここはRender UIで手動設定
+      - key: RAILS_MASTER_KEY
+        value: "dummy_master_key_set_on_render_ui" # ここはRender UIで手動設定
         
       - key: WEB_CONCURRENCY
         value: 2 # Pumaサーバーのプロセス数
