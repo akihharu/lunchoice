@@ -8,14 +8,10 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     
-    # 接続に必要な環境変数の定義
     envVars:
-      # 💡 修正点: DATABASE_URLの定義をネストされたオブジェクト形式で記述します。
       - key: DATABASE_URL
-        # fromDatabase をネストすることで、YAMLのパースエラーを防ぎます。
-        fromDatabase: lunchoice-db 
+        fromDatabase: lunchoice-db
 
-      # RAILS_MASTER_KEY は UI で設定するため、仮の値を残します。
       - key: RAILS_MASTER_KEY
         value: "dummy_master_key_set_on_render_ui" 
         
