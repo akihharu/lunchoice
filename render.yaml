@@ -7,14 +7,15 @@ services:
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
-    
-envVars:
+    # 💡 修正点: envVars は Webサービスの直下のプロパティとして、
+    # name, plan, region, env, buildCommand, startCommand と同じインデントレベルに配置します。
+    envVars: 
       - key: DATABASE_URL
-        value:
+        value: 
           fromDatabase: lunchoice-db
 
       - key: RAILS_MASTER_KEY
-        value: "dummy_master_key_set_on_render_ui" 
+        value: "dummy_master_key_set_on_render_ui"
         
       - key: WEB_CONCURRENCY
         value: 2
