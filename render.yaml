@@ -1,5 +1,4 @@
 services:
-  # 1. Rails Web サービスの設定 (lunchoice)
   - type: web
     name: lunchoice
     plan: free
@@ -7,20 +6,17 @@ services:
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
-    # 💡 修正点: envVars は Webサービスの直下のプロパティとして、
-    # name, plan, region, env, buildCommand, startCommand と同じインデントレベルに配置します。
-    envVars: 
+    
+    envVars:
       - key: DATABASE_URL
-        value: 
-          fromDatabase: lunchoice-db
+        fromDatabase: lunchoice-db
 
       - key: RAILS_MASTER_KEY
-        value: "dummy_master_key_set_on_render_ui"
+        value: "dummy_master_key_set_on_render_ui" 
         
       - key: WEB_CONCURRENCY
         value: 2
 
-# 2. PostgreSQL データベースの定義 (databases ブロック)
 databases:
   - name: lunchoice-db
     plan: free
