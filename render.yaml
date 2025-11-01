@@ -8,9 +8,10 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     
-    envVars:
+envVars:
       - key: DATABASE_URL
-        fromDatabase: lunchoice-db
+        value:
+          fromDatabase: lunchoice-db
 
       - key: RAILS_MASTER_KEY
         value: "dummy_master_key_set_on_render_ui" 
