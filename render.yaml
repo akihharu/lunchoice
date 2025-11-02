@@ -10,7 +10,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: lunchchoice-db
+          name: lunchoice-db
           property: connectionString
 
       - key: RAILS_MASTER_KEY
