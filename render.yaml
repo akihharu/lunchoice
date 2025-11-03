@@ -1,28 +1,25 @@
-# 💡 Renderがアプリケーションとデータベースを認識・構築するための設定ファイル
-
 services:
-  # 1. PostgreSQL データベースの設定
-  - type: pserv
-    name: lunchoice-db
-    plan: free # データベースプラン（無料版）
-    region: oregon # サーバーリージョン（今回はオレゴンを選択）
-
-  # 2. Rails Web サービスの設定
   - type: web
     name: lunchoice
-    plan: free # Webサービスプラン（無料版）
+    plan: free
     region: oregon
     env: ruby
-    buildCommand: "./bin/render-build.sh" # デプロイ前のビルドコマンド
-    startCommand: "bundle exec puma -C config/puma.rb" # サーバー起動コマンド
-    # 接続に必要な環境変数の定義
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    
     envVars:
       - key: DATABASE_URL
-        fromService:
-          type: pserv
+        fromDatabase:
           name: lunchoice-db
           property: connectionString
+
       - key: RAILS_MASTER_KEY
-        # 💡 ここは後で設定します。現在は空欄にしておきます。
+        value: "dummy_master_key_set_on_render_ui" 
+        
       - key: WEB_CONCURRENCY
-        value: 2 # Pumaサーバーのプロセス
+        value: 2
+
+databases:
+  - name: lunchoice-db
+    plan: free
+    region: oregon
