@@ -33,30 +33,40 @@
           <a href="/" style="text-decoration: none; font-family: 'Courgette', cursive; font-weight: 400; font-style: normal; color: #000000ff;">lunchoice</a>
         </h1>
         <nav>
-          <%# 今後、サインアップ/ログインリンクを配置 %>
-          <a href="/login" style="
-            padding: 5px 10px; 
-            border: 1px solid #000; 
-            border-radius: 5px; 
-            margin-right: 10px;
-            background-color: #ffe110; 
-            color: black !important;
-            ">
-            ログイン
-          </a>
-          <a href="/signup" style="
-            padding: 5px 10px; 
-            border: 1px solid #000; 
-            border-radius: 5px; 
-            background-color: #ffe110; 
-            color: black !important
-          ">
-          サインアップ
-          </a>
+          <% if user_signed_in? %>
+            <%# ログイン済みの表示 %>
+            <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, style: "
+              padding: 5px 10px; 
+              border: 1px solid #000; 
+              border-radius: 5px; 
+              background-color: #ffe110; 
+              color: black !important;
+              margin-right: 10px;
+            " %>
+            <%# 今後、ユーザー詳細ページへのリンクもここに配置します %>
+          <% else %>
+            <%# 未ログインの表示 %>
+            <%= link_to "ログイン", new_user_session_path, style: "
+              padding: 5px 10px; 
+              border: 1px solid #000; 
+              border-radius: 5px; 
+              margin-right: 10px;
+              background-color: #ffe110; 
+              color: black !important;
+            " %>
+            <%= link_to "サインアップ", new_user_registration_path, style: "
+              padding: 5px 10px; 
+              border: 1px solid #000; 
+              border-radius: 5px; 
+              background-color: #ffe110; 
+              color: black !important;
+            " %>
+          <% end %>
         </nav>
       </div>
     </header>
-    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%# 2. ページ固有の内容を表示 (Top#indexの内容がここに入る) %>
     <main>
       <%= yield %>
