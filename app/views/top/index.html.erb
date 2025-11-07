@@ -33,6 +33,6 @@
   
   <%# サブの行動喚起 - ログイン済みのユーザー向け %>
   <p style="margin-top: 50px; font-size: 0.9em;">
-    すでにアカウントをお持ちですか？ <a href="/login" style="color: #007bff; text-decoration: none;">ログインはこちら</a>
+    すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら", new_user_session_path, style: "color: #007bff; text-decoration: none;" %>
   </p>
 </div>
