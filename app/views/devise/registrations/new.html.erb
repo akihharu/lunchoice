@@ -1,0 +1,90 @@
+<%# app/views/devise/registrations/new.html.erb %>
+
+<div class="form-container">
+  <h2>サインアップ</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :ユーザー名 %><br />
+      <%= f.text_field :name, autocomplete: "name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em class="small">(<%= @minimum_password_length %> 文字以上)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :パスワード（確認用） %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録", class: "btn-submit" %>
+    </div>
+  <% end %>
+
+  <%# 画面遷移図に基づくリンクを追加 %>
+  <div class="auth-links">
+    <%= link_to "トップページへ", root_path %> | 
+    <%= link_to "ログインへ", new_user_session_path %>
+  </div>
+</div>
+
+<style>
+/* 認証フォームの基本的なスタイリング (必要に応じて application.css に移してください) */
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: white;
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.field {
+  margin-bottom: 15px;
+}
+.field input[type="email"],
+.field input[type="text"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* paddingをwidthに含める */
+}
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF9500; /* アプリケーションのテーマカラー */
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.auth-links {
+  text-align: center;
+  margin-top: 20px;
+}
+.auth-links a {
+  color: #337ab7;
+  text-decoration: none;
+}
+</style>

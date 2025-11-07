@@ -1481,3 +1481,907 @@ Processing by TopController#index as HTML
 Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 21225)
 
 
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE DATABASE "lunchoice_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "lunchoice_development" ENCODING = 'unicode'[0m
+  [1m[35m (188.9ms)[0m  [1m[35mCREATE DATABASE "lunchoice_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(658683307374159585)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-11-04 19:54:01.451430', '2025-11-04 19:54:01.451432') RETURNING "key"[0m
+Migrating to DeviseCreateUsers (20251104193515)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251104193515') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(658683307374159585)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(658683307374159585)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateDishes (20251106163602)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.9ms)[0m  [1m[35mCREATE TABLE "dishes" ("id" bigserial primary key, "name" character varying, "cuisine" character varying, "main_dish" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251106163602') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateChoices (20251106163617)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "choices" ("id" bigserial primary key, "user_id" bigint NOT NULL, "dish_id" bigint NOT NULL, "cuisin_at_choice" character varying, "main_dish_at_choice" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_138b4f93cd"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1c0b33d2f6"
+FOREIGN KEY ("dish_id")
+  REFERENCES "dishes" ("id")
+)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_choices_on_user_id" ON "choices" ("user_id")[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE INDEX "index_choices_on_dish_id" ON "choices" ("dish_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251106163617') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(658683307374159585)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (3.2ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カツ丼"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.391203"], ["updated_at", "2025-11-06 16:50:21.391203"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (2.1ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "親子丼"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.398648"], ["updated_at", "2025-11-06 16:50:21.398648"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "お茶漬け"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.403308"], ["updated_at", "2025-11-06 16:50:21.403308"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "唐揚げ"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.407001"], ["updated_at", "2025-11-06 16:50:21.407001"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "冷や奴"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.410810"], ["updated_at", "2025-11-06 16:50:21.410810"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.8ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "卵焼き"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.414628"], ["updated_at", "2025-11-06 16:50:21.414628"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "サバの味噌煮"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.418959"], ["updated_at", "2025-11-06 16:50:21.418959"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "牛丼"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.423020"], ["updated_at", "2025-11-06 16:50:21.423020"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "寿司"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.427077"], ["updated_at", "2025-11-06 16:50:21.427077"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "TKG"], ["cuisine", "和食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.431187"], ["updated_at", "2025-11-06 16:50:21.431187"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.7ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ざるそば"], ["cuisine", "和食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.435473"], ["updated_at", "2025-11-06 16:50:21.435473"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ざるうどん"], ["cuisine", "和食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.439641"], ["updated_at", "2025-11-06 16:50:21.439641"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.7ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "かけうどん"], ["cuisine", "和食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.443621"], ["updated_at", "2025-11-06 16:50:21.443621"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "かけそば"], ["cuisine", "和食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.447905"], ["updated_at", "2025-11-06 16:50:21.447905"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "焼きそば"], ["cuisine", "和食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.451882"], ["updated_at", "2025-11-06 16:50:21.451882"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.7ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "焼きうどん"], ["cuisine", "和食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.455886"], ["updated_at", "2025-11-06 16:50:21.455886"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "そうめん"], ["cuisine", "和食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.459905"], ["updated_at", "2025-11-06 16:50:21.459905"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.7ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "お好み焼き"], ["cuisine", "和食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.463730"], ["updated_at", "2025-11-06 16:50:21.463730"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.9ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "たこ焼き"], ["cuisine", "和食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.476948"], ["updated_at", "2025-11-06 16:50:21.476948"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "皿うどん"], ["cuisine", "和食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.481287"], ["updated_at", "2025-11-06 16:50:21.481287"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "もんじゃ焼き"], ["cuisine", "和食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.485162"], ["updated_at", "2025-11-06 16:50:21.485162"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "焼きおにぎり"], ["cuisine", "和食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.488882"], ["updated_at", "2025-11-06 16:50:21.488882"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "やきいも"], ["cuisine", "和食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.493114"], ["updated_at", "2025-11-06 16:50:21.493114"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "オムライス"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.497295"], ["updated_at", "2025-11-06 16:50:21.497295"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (2.3ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ドリア"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.501279"], ["updated_at", "2025-11-06 16:50:21.501279"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "エビピラフ"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.506113"], ["updated_at", "2025-11-06 16:50:21.506113"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "タコライス"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.509966"], ["updated_at", "2025-11-06 16:50:21.509966"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (2.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "チキンライス"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.513790"], ["updated_at", "2025-11-06 16:50:21.513790"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (2.1ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ハヤシライス"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.518849"], ["updated_at", "2025-11-06 16:50:21.518849"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ジャンバラヤ"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.523489"], ["updated_at", "2025-11-06 16:50:21.523489"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "パエリア"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.527282"], ["updated_at", "2025-11-06 16:50:21.527282"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "リゾット"], ["cuisine", "洋食"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.531381"], ["updated_at", "2025-11-06 16:50:21.531381"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ナポリタン"], ["cuisine", "洋食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.535372"], ["updated_at", "2025-11-06 16:50:21.535372"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カルボナーラ"], ["cuisine", "洋食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.539191"], ["updated_at", "2025-11-06 16:50:21.539191"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.3ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ミートスパ"], ["cuisine", "洋食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.542858"], ["updated_at", "2025-11-06 16:50:21.542858"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ペペロンチーノ"], ["cuisine", "洋食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.546362"], ["updated_at", "2025-11-06 16:50:21.546362"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ボンゴレ"], ["cuisine", "洋食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.549991"], ["updated_at", "2025-11-06 16:50:21.549991"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (2.3ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ジェノベーゼ"], ["cuisine", "洋食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.560483"], ["updated_at", "2025-11-06 16:50:21.560483"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "マカロニグラタン"], ["cuisine", "洋食"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.565573"], ["updated_at", "2025-11-06 16:50:21.565573"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "サンドイッチ"], ["cuisine", "洋食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.569327"], ["updated_at", "2025-11-06 16:50:21.569327"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.7ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ホットドッグ"], ["cuisine", "洋食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.573274"], ["updated_at", "2025-11-06 16:50:21.573274"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "フレンチトースト"], ["cuisine", "洋食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.578014"], ["updated_at", "2025-11-06 16:50:21.578014"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "パンケーキ"], ["cuisine", "洋食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.581730"], ["updated_at", "2025-11-06 16:50:21.581730"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (2.1ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "クロックムッシュ"], ["cuisine", "洋食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.585320"], ["updated_at", "2025-11-06 16:50:21.585320"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ハンバーガー"], ["cuisine", "洋食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.589584"], ["updated_at", "2025-11-06 16:50:21.589584"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "キッシュ"], ["cuisine", "洋食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.593444"], ["updated_at", "2025-11-06 16:50:21.593444"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (2.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ポテトガレット"], ["cuisine", "洋食"], ["main_dish", "その他"], ["created_at", "2025-11-06 16:50:21.597175"], ["updated_at", "2025-11-06 16:50:21.597175"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "麻婆丼"], ["cuisine", "中華"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.601388"], ["updated_at", "2025-11-06 16:50:21.601388"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "中華丼"], ["cuisine", "中華"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.605409"], ["updated_at", "2025-11-06 16:50:21.605409"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "チャーハン"], ["cuisine", "中華"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.609390"], ["updated_at", "2025-11-06 16:50:21.609390"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "天津飯"], ["cuisine", "中華"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.613239"], ["updated_at", "2025-11-06 16:50:21.613239"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.3ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ルーローハン"], ["cuisine", "中華"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.616899"], ["updated_at", "2025-11-06 16:50:21.616899"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ビビンバ"], ["cuisine", "中華"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.620456"], ["updated_at", "2025-11-06 16:50:21.620456"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "角煮丼"], ["cuisine", "中華"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.624027"], ["updated_at", "2025-11-06 16:50:21.624027"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "中華おこげ"], ["cuisine", "中華"], ["main_dish", "米"], ["created_at", "2025-11-06 16:50:21.628185"], ["updated_at", "2025-11-06 16:50:21.628185"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ラーメン"], ["cuisine", "中華"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.632175"], ["updated_at", "2025-11-06 16:50:21.632175"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.9ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "タンタンメン"], ["cuisine", "中華"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.640023"], ["updated_at", "2025-11-06 16:50:21.640023"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "酸辣湯麺"], ["cuisine", "中華"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.644371"], ["updated_at", "2025-11-06 16:50:21.644371"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "餡掛け焼きそば"], ["cuisine", "中華"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.648145"], ["updated_at", "2025-11-06 16:50:21.648145"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.6ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ざる中華"], ["cuisine", "中華"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.652522"], ["updated_at", "2025-11-06 16:50:21.652522"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ワンタン麺"], ["cuisine", "中華"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.656387"], ["updated_at", "2025-11-06 16:50:21.656387"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDish Create (1.5ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "冷やし中華"], ["cuisine", "中華"], ["main_dish", "麺"], ["created_at", "2025-11-06 16:50:21.660400"], ["updated_at", "2025-11-06 16:50:21.660400"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDish Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes"[0m
+Started GET "/" for 127.0.0.1 at 2025-11-07 01:53:12 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 333)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 6870)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 15483)
+
+
+  
+ActionView::Template::Error (Permission denied @ apply2files - /home/kobay/lunchoice/tmp/cache/assets/sprockets/v4.0.0/eP/eP_0zCEYEyOmnEc0p5h-pdAKxnfqhNLXPOGFBQBoPzY.cache):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11: 
+    12:     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2025-11-07 01:58:28 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 333)
+  Rendered layout layouts/application.html.erb (Duration: 312.5ms | Allocations: 110801)
+Completed 200 OK in 335ms (Views: 317.4ms | ActiveRecord: 0.0ms | Allocations: 119457)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 01:58:35 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 560)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4139)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 5432)
+Completed 200 OK in 61ms (Views: 11.9ms | ActiveRecord: 24.7ms | Allocations: 17555)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 01:58:37 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 218)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 83)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1616)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2831)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3728)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 01:58:37 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 2111)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 2682)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 01:58:38 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 68)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 916)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2128)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 2656)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 01:58:39 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2104)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2680)
+
+
+Started GET "/signup" for 127.0.0.1 at 2025-11-07 01:58:46 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/" for 127.0.0.1 at 2025-11-07 01:58:47 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1464)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 1705)
+
+
+Started GET "/login" for 127.0.0.1 at 2025-11-07 01:58:50 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/" for 127.0.0.1 at 2025-11-07 01:58:52 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1437)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 1675)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:02:03 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2097)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 2648)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 02:02:04 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 68)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 916)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2125)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2655)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:02:05 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2097)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2663)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:22:43 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 568)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3506)
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 02:22:44 +0900
+  Rendered layout layouts/application.html.erb (Duration: 100.0ms | Allocations: 43886)
+Completed 200 OK in 157ms (Views: 106.9ms | ActiveRecord: 19.8ms | Allocations: 60360)
+
+
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 220)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2009)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3229)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4124)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:22:44 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2101)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2692)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 02:22:45 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 984)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2194)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2727)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:24:17 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1320)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 21629)
+Completed 200 OK in 23ms (Views: 13.8ms | ActiveRecord: 4.4ms | Allocations: 26782)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:24:19 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1950)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2517)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:24:20 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1950)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2526)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:24:20 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1950)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2511)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:24:22 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1950)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 2511)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:30:12 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1950)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2511)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 02:30:12 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 209)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1782)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2995)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3876)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(658683307374159585)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddNameToUsers (20251106173134)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251106173134') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(658683307374159585)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2025-11-07 02:34:17 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ネシなく", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (5.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ネシなく"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 712)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 3733)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3825)
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 16.2ms | Allocations: 23065)
+
+
+  
+ActionView::Template::Error (undefined method `name' for an instance of User):
+    13: 
+    14:     <div class="field">
+    15:       <%= f.label :ユーザー名 %><br />
+    16:       <%= f.text_field :name, autocomplete: "name" %>
+    17:     </div>
+    18: 
+    19:     <div class="field">
+  
+app/views/devise/registrations/new.html.erb:16
+app/views/devise/registrations/new.html.erb:6
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(658683307374159585)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(658683307374159585)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:35:54 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2933)
+  Rendered layout layouts/application.html.erb (Duration: 81.0ms | Allocations: 42724)
+Completed 200 OK in 142ms (Views: 88.0ms | ActiveRecord: 22.2ms | Allocations: 59683)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:35:54 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 1950)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 2523)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 02:35:57 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 222)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1932)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 3141)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 4077)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-11-07 02:36:12 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ranteq@kr.com", "name"=>"ネシなく", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ranteq@kr.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "ranteq@kr.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-11-06 17:36:13.100175"], ["updated_at", "2025-11-06 17:36:13.100175"], ["name", "ネシなく"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 182ms (ActiveRecord: 12.5ms | Allocations: 11634)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:36:13 +0900
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 227)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:36
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2830)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 1.1ms | Allocations: 3606)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2025-11-07 02:36:16 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 7ms (ActiveRecord: 0.6ms | Allocations: 2522)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:36:16 +0900
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1438)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1681)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 02:36:16 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 983)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2188)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2720)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:36:17 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 746)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 1966)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 2530)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:36:22 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ranteq@kr.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ranteq@kr.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 169ms (ActiveRecord: 0.8ms | Allocations: 7325)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:36:22 +0900
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:36
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2057)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms | Allocations: 2299)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2025-11-07 02:36:33 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 5ms (ActiveRecord: 0.6ms | Allocations: 1777)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:36:33 +0900
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 1431)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 1674)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 02:36:33 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2187)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 2724)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:36:34 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1950)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 2540)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-07 02:36:34 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2201)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2738)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:36:38 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1432)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1672)
+
+
+Started GET "/signup" for 127.0.0.1 at 2025-11-07 02:36:38 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/signup" for 127.0.0.1 at 2025-11-07 02:36:39 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:36:40 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1423)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 1665)
+
+
+Started GET "/signup" for 127.0.0.1 at 2025-11-07 02:36:40 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/login" for 127.0.0.1 at 2025-11-07 02:53:45 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:53:49 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1318)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 1417)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3095)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%# app/views/top/index.html.erb - トップページのビュー %>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<div style="text-align: center; ">
+  <h1 style="text-align: center; font-size: 9em; font-family: 'Courgette', cursive; font-weight: 400; font-style: normal;">
+  lunchoice
+  </h1>
+  <%# ページタイトル - サービスの本質を伝える %>
+  <h2>休日のランチ、決めてみませんか？</h2>
+  
+  <%# サービスの説明 - 最小限に %>
+  <p style="margin-top: 25px; font-size: 1.2em; max-width: 600px; margin: 10px auto;">
+    LUNCHOICEは、「休日のお昼、何食べる？」を解決する、<br>
+    休日のランチ決定をサポートするサービスです。
+  </p>
+  
+  <%# メインの行動喚起ボタン - サインアップに誘導 %>
+  <a href="/signup" style="
+    display: inline-block; 
+    margin-top: 40px; 
+    padding: 18px 35px; /* 大きく強調 */
+    font-size: 1.4em; 
+    font-weight: bold; 
+    color: black; 
+    background-color: #ffe110; /* ヘッダーと合わせた黄色 */
+    border-radius: 8px; 
+    text-decoration: none;
+    border: 2px solid #000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  ">
+    今の気分は？
+  </a>
+  
+  <%# サブの行動喚起 - ログイン済みのユーザー向け %>
+  <p style="margin-top: 50px; font-size: 0.9em;">
+    すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら" new_user_session_path style="color: #007bff; text-decoration: none;" %>
+  </p>
+</div>
+):
+1:    <%# app/views/top/index.html.erb - トップページのビュー %>
+2:    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+3:    
+4:    <div style="text-align: center; ">
+5:      <h1 style="text-align: center; font-size: 9em; font-family: 'Courgette', cursive; font-weight: 400; font-style: normal;">
+6:      lunchoice
+7:      </h1>
+8:      <%# ページタイトル - サービスの本質を伝える %>
+9:      <h2>休日のランチ、決めてみませんか？</h2>
+10:      
+11:      <%# サービスの説明 - 最小限に %>
+12:      <p style="margin-top: 25px; font-size: 1.2em; max-width: 600px; margin: 10px auto;">
+13:        LUNCHOICEは、「休日のお昼、何食べる？」を解決する、<br>
+14:        休日のランチ決定をサポートするサービスです。
+15:      </p>
+16:      
+17:      <%# メインの行動喚起ボタン - サインアップに誘導 %>
+18:      <a href="/signup" style="
+19:        display: inline-block; 
+20:        margin-top: 40px; 
+21:        padding: 18px 35px; /* 大きく強調 */
+22:        font-size: 1.4em; 
+23:        font-weight: bold; 
+24:        color: black; 
+25:        background-color: #ffe110; /* ヘッダーと合わせた黄色 */
+26:        border-radius: 8px; 
+27:        text-decoration: none;
+28:        border: 2px solid #000;
+29:        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+30:      ">
+31:        今の気分は？
+32:      </a>
+33:      
+34:      <%# サブの行動喚起 - ログイン済みのユーザー向け %>
+35:      <p style="margin-top: 50px; font-size: 0.9em;">
+36:        すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら" new_user_session_path style="color: #007bff; text-decoration: none;" %>
+37:      </p>
+38:    </div>
+  
+app/views/top/index.html.erb:36: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:54:48 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1248)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 1347)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3053)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%# app/views/top/index.html.erb - トップページのビュー %>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<div style="text-align: center; ">
+  <h1 style="text-align: center; font-size: 9em; font-family: 'Courgette', cursive; font-weight: 400; font-style: normal;">
+  lunchoice
+  </h1>
+  <%# ページタイトル - サービスの本質を伝える %>
+  <h2>休日のランチ、決めてみませんか？</h2>
+  
+  <%# サービスの説明 - 最小限に %>
+  <p style="margin-top: 25px; font-size: 1.2em; max-width: 600px; margin: 10px auto;">
+    LUNCHOICEは、「休日のお昼、何食べる？」を解決する、<br>
+    休日のランチ決定をサポートするサービスです。
+  </p>
+  
+  <%# メインの行動喚起ボタン - サインアップに誘導 %>
+  <a href="/signup" style="
+    display: inline-block; 
+    margin-top: 40px; 
+    padding: 18px 35px; /* 大きく強調 */
+    font-size: 1.4em; 
+    font-weight: bold; 
+    color: black; 
+    background-color: #ffe110; /* ヘッダーと合わせた黄色 */
+    border-radius: 8px; 
+    text-decoration: none;
+    border: 2px solid #000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  ">
+    今の気分は？
+  </a>
+  
+  <%# サブの行動喚起 - ログイン済みのユーザー向け %>
+  <p style="margin-top: 50px; font-size: 0.9em;">
+    すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら" new_user_session_path, style: "color: #007bff; text-decoration: none;" %>
+  </p>
+</div>
+):
+1:    <%# app/views/top/index.html.erb - トップページのビュー %>
+2:    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+3:    
+4:    <div style="text-align: center; ">
+5:      <h1 style="text-align: center; font-size: 9em; font-family: 'Courgette', cursive; font-weight: 400; font-style: normal;">
+6:      lunchoice
+7:      </h1>
+8:      <%# ページタイトル - サービスの本質を伝える %>
+9:      <h2>休日のランチ、決めてみませんか？</h2>
+10:      
+11:      <%# サービスの説明 - 最小限に %>
+12:      <p style="margin-top: 25px; font-size: 1.2em; max-width: 600px; margin: 10px auto;">
+13:        LUNCHOICEは、「休日のお昼、何食べる？」を解決する、<br>
+14:        休日のランチ決定をサポートするサービスです。
+15:      </p>
+16:      
+17:      <%# メインの行動喚起ボタン - サインアップに誘導 %>
+18:      <a href="/signup" style="
+19:        display: inline-block; 
+20:        margin-top: 40px; 
+21:        padding: 18px 35px; /* 大きく強調 */
+22:        font-size: 1.4em; 
+23:        font-weight: bold; 
+24:        color: black; 
+25:        background-color: #ffe110; /* ヘッダーと合わせた黄色 */
+26:        border-radius: 8px; 
+27:        text-decoration: none;
+28:        border: 2px solid #000;
+29:        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+30:      ">
+31:        今の気分は？
+32:      </a>
+33:      
+34:      <%# サブの行動喚起 - ログイン済みのユーザー向け %>
+35:      <p style="margin-top: 50px; font-size: 0.9em;">
+36:        すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら" new_user_session_path, style: "color: #007bff; text-decoration: none;" %>
+37:      </p>
+38:    </div>
+  
+app/views/top/index.html.erb:36: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/" for 127.0.0.1 at 2025-11-07 02:57:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 306)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 20844)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 22536)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:57:27 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1266)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2564)
+Completed 200 OK in 32ms (Views: 4.7ms | ActiveRecord: 10.0ms | Allocations: 10624)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-07 02:57:29 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1958)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2527)
+
+
