@@ -1,2 +1,125 @@
-<h1>Choices#new</h1>
-<p>Find me in app/views/choices/new.html.erb</p>
+<div class="selection-container">
+  <h2>今日の昼食、何にする？</h2>
+  <p>大カテゴリと主食を選択して、候補を提案してもらいましょう！</p>
+  
+  <%# フォームの送信先を /dishes (料理一覧ページ) に設定します %>
+  <%# GETメソッドで送信し、パラメータを次の画面に渡します %>
+  <%= form_with url: dishes_path, method: :get, local: true, class: "selection-form" do %>
+    
+    <%# ----------------------------------- %>
+
+    <div class="category-group">
+      <h3>1. 大カテゴリ</h3>
+      <% ['和食', '洋食', '中華'].each do |cuisine| %>
+        <% id = "cuisine_#{cuisine}" %> 
+        
+        <%# inputとlabelを明確に紐づけるため、IDを定義 %>
+        <%= radio_button_tag :cuisine, cuisine, false, id: id, class: "cuisine-radio" %>
+        
+        <%# label タグの for 属性に input の id を指定して紐づけます %>
+        <label for="<%= id %>" class="radio-label">
+          <%= cuisine %>
+        </label>
+      <% end %>
+    </div>
+    
+    <%# ----------------------------------- %>
+    <%# 2. 主食 (Main Dish) の選択 %>
+    <div class="category-group">
+      <h3>2. 主食</h3>
+      <% ['米', '麺', 'その他'].each do |main_dish| %>
+        <% id = "main_dish_#{main_dish}" %> 
+    
+        <%# inputとlabelを明確に紐づけるため、IDを定義 %>
+        <%= radio_button_tag :main_dish, main_dish, false, id: id, class: "main-dish-radio" %>
+        
+        <%# label タグの for 属性に input の id を指定して紐づけます %>
+        <label for="<%= id %>" class="radio-label">
+          <%= main_dish %>
+        </label>
+      <% end %>
+    </div>
+    <%# ----------------------------------- %>
+    <%# 3. 提案ボタン %>
+    <div class="actions">
+      <%= submit_tag "提案", class: "btn-submit" %>
+    </div>
+  <% end %>
+</div>
+
+<%# スタイル（app/views/layouts/application.html.erbのmain要素の幅を考慮したデザインです） %>
+<style>
+.selection-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background-color: white;
+}
+.selection-container h2 {
+  font-family: 'Shantell Sans', cursive;
+  color: #FF9500;
+  margin-bottom: 5px;
+}
+.selection-container p {
+  margin-bottom: 30px;
+  color: #555;
+}
+.category-group {
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  text-align: center;
+}
+.actions {
+  text-align: center; /* ボタンを含む要素内のコンテンツを中央寄せにする */
+  margin-top: 20px;   /* 上部の余白を確保 */
+}
+.category-group h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+.radio-label {
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  transition: all 0.2s;
+  background-color: #f9f9f9;
+}
+.radio-label:hover {
+  background-color: #ffe110;
+  border-color: #FF9500;
+}
+.cuisine-radio:checked + label,
+.main-dish-radio:checked + label {
+  background-color: #FF9500;
+  color: white;
+  border-color: #FF9500;
+}
+input[type="radio"] {
+  display: none;
+}
+.btn-submit {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.2s;
+}
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+</style>

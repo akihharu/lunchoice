@@ -2385,3 +2385,339 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2527)
 
 
+Started GET "/" for 127.0.0.1 at 2025-11-07 20:54:39 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 520)
+  Rendered layout layouts/application.html.erb (Duration: 78.7ms | Allocations: 41781)
+Completed 200 OK in 93ms (Views: 81.5ms | ActiveRecord: 0.0ms | Allocations: 47392)
+
+
+Started GET "/signup" for 127.0.0.1 at 2025-11-07 20:54:40 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/" for 127.0.0.1 at 2025-11-07 20:54:43 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1473)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1718)
+
+
+Started GET "/signup" for 127.0.0.1 at 2025-11-07 20:54:45 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/signup" for 127.0.0.1 at 2025-11-09 09:01:43 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/" for 127.0.0.1 at 2025-11-09 09:18:17 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 307)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 20844)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 22547)
+
+
+Started GET "/new_choice_path" for 127.0.0.1 at 2025-11-09 09:18:18 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/new_choice_path"):
+  
+Started GET "/" for 127.0.0.1 at 2025-11-09 09:18:22 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1464)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 1707)
+
+
+Started GET "/new_choice_path" for 127.0.0.1 at 2025-11-09 09:19:33 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/new_choice_path"):
+  
+Started GET "/new_choice_path" for 127.0.0.1 at 2025-11-09 09:20:10 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/new_choice_path"):
+  
+Started GET "/" for 127.0.0.1 at 2025-11-09 09:20:47 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1298)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1390)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3090)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for an instance of String):
+    15:   </p>
+    16:   
+    17:   <%# メインの行動喚起ボタン - サインアップに誘導 %>
+    18:   <%= link_to "今の気分は？", new_choice_path, style="
+    19:     display: inline-block; 
+    20:     margin-top: 40px; 
+    21:     padding: 18px 35px; /* 大きく強調 */
+  
+app/views/top/index.html.erb:18
+Started GET "/" for 127.0.0.1 at 2025-11-09 09:21:30 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1274)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1366)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3049)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for an instance of String):
+    15:   </p>
+    16:   
+    17:   <%# メインの行動喚起ボタン - サインアップに誘導 %>
+    18:   <%= link_to "今の気分は？", new_choice_path, style="
+    19:     display: inline-block; 
+    20:     margin-top: 40px; 
+    21:     padding: 18px 35px; /* 大きく強調 */
+  
+app/views/top/index.html.erb:18
+Started GET "/" for 127.0.0.1 at 2025-11-09 09:30:11 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 20847)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 22548)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-09 09:30:17 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 91)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1521)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2000)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 00:21:08 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 915)
+  Rendered layout layouts/application.html.erb (Duration: 77.9ms | Allocations: 21437)
+Completed 200 OK in 95ms (Views: 83.9ms | ActiveRecord: 0.0ms | Allocations: 23136)
+
+
+Started GET "/dishes?cuisine=%E6%B4%8B%E9%A3%9F&main_dish=%E3%81%9D%E3%81%AE%E4%BB%96&commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-10 00:21:27 +0900
+  
+ActionController::RoutingError (uninitialized constant DishesController):
+  
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 00:21:27 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 251)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1658)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 1896)
+
+
+Started GET "/dishes?commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-10 00:21:28 +0900
+  
+ActionController::RoutingError (uninitialized constant DishesController):
+  
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 00:21:28 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 251)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1653)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 1893)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 00:21:48 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 251)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1677)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1916)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:10:42 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1035)
+  Rendered layout layouts/application.html.erb (Duration: 45.0ms | Allocations: 21563)
+Completed 200 OK in 55ms (Views: 48.0ms | ActiveRecord: 0.0ms | Allocations: 23262)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-10 01:10:43 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1717)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 2196)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:11:30 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 986)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 21495)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 23194)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:11:31 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1688)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1927)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-10 01:11:32 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1741)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2221)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:11:32 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1688)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 1927)
+
+
+Started GET "/dishes?cuisine=%E4%B8%AD%E8%8F%AF&main_dish=%E3%81%9D%E3%81%AE%E4%BB%96&commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-10 01:11:40 +0900
+  
+ActionController::RoutingError (uninitialized constant DishesController):
+  
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:11:40 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1685)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1923)
+
+
+Started GET "/dishes?commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-10 01:11:41 +0900
+  
+ActionController::RoutingError (uninitialized constant DishesController):
+  
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:11:41 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1683)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 1921)
+
+
+Started GET "/dishes?cuisine=%E4%B8%AD%E8%8F%AF&main_dish=%E3%81%9D%E3%81%AE%E4%BB%96&commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-10 01:11:45 +0900
+  
+ActionController::RoutingError (uninitialized constant DishesController):
+  
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:11:45 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1691)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 1931)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:14:10 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 987)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 21523)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 23222)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:14:11 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1682)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 1921)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-10 01:14:12 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1732)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2211)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:14:16 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1670)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1909)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:22:03 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 986)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 21510)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 23209)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:23:16 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 984)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 21513)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 23212)
+
+
+Started GET "/dishes?cuisine=%E5%92%8C%E9%A3%9F&main_dish=%E3%81%9D%E3%81%AE%E4%BB%96&commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-10 01:23:24 +0900
+  
+ActionController::RoutingError (uninitialized constant DishesController):
+  
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:23:24 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1700)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1938)
+
+
+Started GET "/dishes?cuisine=%E6%B4%8B%E9%A3%9F&main_dish=%E7%B1%B3&commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-10 01:23:26 +0900
+  
+ActionController::RoutingError (uninitialized constant DishesController):
+  
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-10 01:23:26 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 1690)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 1930)
+
+
