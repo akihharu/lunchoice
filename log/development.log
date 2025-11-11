@@ -2995,3 +2995,22 @@ Processing by ChoicesController#new as HTML
 Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1929)
 
 
+Started GET "/" for 127.0.0.1 at 2025-11-12 00:28:22 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 557)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | Allocations: 41803)
+Completed 200 OK in 79ms (Views: 70.5ms | ActiveRecord: 0.0ms | Allocations: 47037)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-12 00:28:23 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1272)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2690)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3173)
+
+

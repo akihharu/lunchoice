@@ -42,7 +42,7 @@
     <%# ----------------------------------- %>
     <%# 3. 提案ボタン %>
     <div class="actions">
-      <%= submit_tag "提案", class: "btn-submit" %>
+      <%= submit_tag "提案", class: "btn-submit", disabled: true %>
     </div>
   <% end %>
 </div>
@@ -122,64 +122,78 @@ input[type="radio"] {
 .btn-submit:hover {
   background-color: #0056b3;
 }
+.btn-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
 </style>
 <script>
-document.addEventListener('turbo:load', initializeChoiceSelection); // Turboの場合 (Rails 7以降)
-document.addEventListener('turbolinks:load', initializeChoiceSelection); // Turbolinksの場合 (Rails 6以前)
-document.addEventListener('DOMContentLoaded', initializeChoiceSelection); // リロード時も対応
+document.addEventListener('turbo:load', initializeChoiceSelection);
+document.addEventListener('turbolinks:load', initializeChoiceSelection);
+document.addEventListener('DOMContentLoaded', initializeChoiceSelection);
 
 function initializeChoiceSelection() {
   const cuisineRadios = document.querySelectorAll('.cuisine-radio');
   const otherMainDishLabel = document.querySelector('.option-disabled');
   const otherMainDishInput = document.querySelector('#main_dish_その他');
+  const mainDishRadios = document.querySelectorAll('.main-dish-radio');
+  const submitButton = document.querySelector('.btn-submit');    
 
-  // 1. ページロード時にも初期状態を設定（重要）
-  // 最初に「中華」が選ばれていないかチェックし、その他を有効に戻す
-  let isChukaSelectedOnLoad = false;
-  cuisineRadios.forEach(radio => {
-    if (radio.value === '中華' && radio.checked) {
-      isChukaSelectedOnLoad = true;
-    }
-  });
+  // --- 機能1: 提案ボタンの有効/無効チェック ---
+  function checkFormValidity() {
+    let cuisineSelected = Array.from(cuisineRadios).some(radio => radio.checked);
+    let mainDishSelected = Array.from(mainDishRadios).some(radio => radio.checked);
 
-  if (!isChukaSelectedOnLoad) {
-    if (otherMainDishInput) {
-      otherMainDishInput.disabled = false;
-    }
-    if (otherMainDishLabel) {
-      otherMainDishLabel.style.opacity = '1.0';
-      otherMainDishLabel.style.pointerEvents = 'auto';
-      otherMainDishLabel.style.cursor = 'pointer';
+    if (cuisineSelected && mainDishSelected) {
+      submitButton.disabled = false;
+      submitButton.style.opacity = '1.0';
+    } else {
+      submitButton.disabled = true;
+      submitButton.style.opacity = '0.6';
     }
   }
   
-  // 2. イベントリスナーの設定
+  // --- 機能2: 中華選択時の「その他」無効化制御 ---
+  function handleChukaDisable(radio) {
+    if (radio.value === '中華' && radio.checked) {
+      if (otherMainDishInput) {
+        otherMainDishInput.disabled = true;
+      }
+      if (otherMainDishLabel) {
+        otherMainDishLabel.style.opacity = '0.5';
+        otherMainDishLabel.style.pointerEvents = 'none';
+        otherMainDishLabel.style.cursor = 'not-allowed';
+      }
+      if (otherMainDishInput && otherMainDishInput.checked) {
+        otherMainDishInput.checked = false;
+      }
+    } else {
+      if (otherMainDishInput) {
+        otherMainDishInput.disabled = false;
+      }
+      if (otherMainDishLabel) {
+        otherMainDishLabel.style.opacity = '1.0';
+        otherMainDishLabel.style.pointerEvents = 'auto';
+        otherMainDishLabel.style.cursor = 'pointer';
+      }
+    }
+  }
+
+  // --- イベントリスナー設定 ---
   cuisineRadios.forEach(radio => {
     radio.addEventListener('change', function() {
-      // 以下のロジックは、前回の修正で問題ないためそのまま残します
-      if (this.value === '中華' && this.checked) {
-        if (otherMainDishInput) {
-          otherMainDishInput.disabled = true;
-        }
-        if (otherMainDishLabel) {
-          otherMainDishLabel.style.opacity = '0.5';
-          otherMainDishLabel.style.pointerEvents = 'none';
-          otherMainDishLabel.style.cursor = 'not-allowed';
-        }
-        if (otherMainDishInput && otherMainDishInput.checked) {
-          otherMainDishInput.checked = false;
-        }
-      } else {
-        if (otherMainDishInput) {
-          otherMainDishInput.disabled = false;
-        }
-        if (otherMainDishLabel) {
-          otherMainDishLabel.style.opacity = '1.0';
-          otherMainDishLabel.style.pointerEvents = 'auto';
-          otherMainDishLabel.style.cursor = 'pointer';
-        }
-      }
+      handleChukaDisable(this); // 中華無効化ロジックを実行
+      checkFormValidity();       // ボタン有効/無効チェックを実行
     });
   });
+  
+  mainDishRadios.forEach(radio => {
+    radio.addEventListener('change', checkFormValidity); // 主食変更時、ボタン有効/無効チェックを実行
+  });
+
+  // --- 初期ロード時の実行 ---
+  // ページ遷移直後の状態を正しく設定する
+  cuisineRadios.forEach(radio => handleChukaDisable(radio)); // 初期の中華チェック
+  checkFormValidity(); // 初期ボタンチェック
 }
 </script>
