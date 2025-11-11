@@ -34,7 +34,7 @@
         <%= radio_button_tag :main_dish, main_dish, false, id: id, class: "main-dish-radio" %>
         
         <%# label タグの for 属性に input の id を指定して紐づけます %>
-        <label for="<%= id %>" class="radio-label">
+        <label for="<%= id %>" class="radio-label <%= 'option-disabled' if main_dish == 'その他' %>">
           <%= main_dish %>
         </label>
       <% end %>
@@ -123,3 +123,63 @@ input[type="radio"] {
   background-color: #0056b3;
 }
 </style>
+<script>
+document.addEventListener('turbo:load', initializeChoiceSelection); // Turboの場合 (Rails 7以降)
+document.addEventListener('turbolinks:load', initializeChoiceSelection); // Turbolinksの場合 (Rails 6以前)
+document.addEventListener('DOMContentLoaded', initializeChoiceSelection); // リロード時も対応
+
+function initializeChoiceSelection() {
+  const cuisineRadios = document.querySelectorAll('.cuisine-radio');
+  const otherMainDishLabel = document.querySelector('.option-disabled');
+  const otherMainDishInput = document.querySelector('#main_dish_その他');
+
+  // 1. ページロード時にも初期状態を設定（重要）
+  // 最初に「中華」が選ばれていないかチェックし、その他を有効に戻す
+  let isChukaSelectedOnLoad = false;
+  cuisineRadios.forEach(radio => {
+    if (radio.value === '中華' && radio.checked) {
+      isChukaSelectedOnLoad = true;
+    }
+  });
+
+  if (!isChukaSelectedOnLoad) {
+    if (otherMainDishInput) {
+      otherMainDishInput.disabled = false;
+    }
+    if (otherMainDishLabel) {
+      otherMainDishLabel.style.opacity = '1.0';
+      otherMainDishLabel.style.pointerEvents = 'auto';
+      otherMainDishLabel.style.cursor = 'pointer';
+    }
+  }
+  
+  // 2. イベントリスナーの設定
+  cuisineRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      // 以下のロジックは、前回の修正で問題ないためそのまま残します
+      if (this.value === '中華' && this.checked) {
+        if (otherMainDishInput) {
+          otherMainDishInput.disabled = true;
+        }
+        if (otherMainDishLabel) {
+          otherMainDishLabel.style.opacity = '0.5';
+          otherMainDishLabel.style.pointerEvents = 'none';
+          otherMainDishLabel.style.cursor = 'not-allowed';
+        }
+        if (otherMainDishInput && otherMainDishInput.checked) {
+          otherMainDishInput.checked = false;
+        }
+      } else {
+        if (otherMainDishInput) {
+          otherMainDishInput.disabled = false;
+        }
+        if (otherMainDishLabel) {
+          otherMainDishLabel.style.opacity = '1.0';
+          otherMainDishLabel.style.pointerEvents = 'auto';
+          otherMainDishLabel.style.cursor = 'pointer';
+        }
+      }
+    });
+  });
+}
+</script>
