@@ -3014,3 +3014,12 @@ Processing by ChoicesController#new as HTML
 Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3173)
 
 
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-12 16:39:56 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 1705)
+Completed 200 OK in 54ms (Views: 47.0ms | ActiveRecord: 0.0ms | Allocations: 1950)
+
+
