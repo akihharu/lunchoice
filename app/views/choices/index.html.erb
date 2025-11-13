@@ -1,0 +1,95 @@
+<div class="history-container">
+  <h2><%= current_user.name %> さんのランチ記録</h2>
+
+  <% if @choices.any? %>
+    <p>これまでに <%= @choices.count %> 件のランチを記録しました。</p>
+    
+    <ul class="history-list">
+      <% @choices.each do |choice| %>
+        <li class="history-item">
+          <div class="dish-info">
+            <span class="dish-name"><%= choice.dish.name %></span>
+            <span class="details">(<%= choice.cuisin_at_choice %>・<%= choice.main_dish_at_choice %>)</span>
+          </div>
+          <div class="record-date">
+            記録日: <%= choice.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <div class="no-history">
+      <p>まだランチの記録がありません。</p>
+      <%= link_to 'ランチを選択する', new_choice_path, class: 'btn-select' %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= link_to 'トップページに戻る', root_path, class: 'btn-back' %>
+  </div>
+</div>
+
+<style>
+.history-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background-color: white;
+}
+.history-container h2 {
+  text-align: center;
+  color: #FF9500;
+  margin-bottom: 30px;
+}
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #fcfcfc;
+  border-radius: 5px;
+}
+.dish-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #333;
+}
+.details {
+  margin-left: 10px;
+  color: #6c757d;
+  font-size: 0.9em;
+}
+.record-date {
+  font-size: 0.9em;
+  color: #888;
+}
+.no-history {
+  text-align: center;
+  padding: 40px 20px;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.btn-select, .btn-back {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.btn-back {
+  background-color: #6c757d;
+}
+</style>

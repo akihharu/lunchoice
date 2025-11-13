@@ -24,7 +24,6 @@
     </div>
   <% end %>
 
-  <%# 画面遷移図に基づくリンクを追加 %>
   <div class="auth-links">
     <%= link_to "トップページへ", root_path %> |
     <%= link_to "サインアップへ", new_user_registration_path %>
@@ -32,11 +31,6 @@
 </div>
 
 <style>
-/* スタイルは registrations/new.html.erb と共通です */
-/* ログイン画面のスタイルは、registrations/new.html.erb に記述したものが適用されるか、
-   application.css などに共通化してください。
-   ここでは、テストのために再度記述します。
-*/
 .form-container {
   max-width: 400px;
   margin: 40px auto;
