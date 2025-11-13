@@ -3583,3 +3583,252 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 2734)
 
 
+Started GET "/" for 127.0.0.1 at 2025-11-14 01:50:39 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 1478)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.0ms | Allocations: 1719)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-14 01:50:40 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 1950)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 2538)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-11-14 01:50:48 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ranteq@kr.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ranteq@kr.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 213ms (ActiveRecord: 18.7ms | Allocations: 4840)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ranteq@kr.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 735)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1900)
+Completed 200 OK in 154ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 2388)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-14 01:50:51 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1460)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 1699)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-14 01:50:52 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1950)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 2521)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-11-14 01:51:03 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ranteq@kr.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ranteq@kr.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 157ms (ActiveRecord: 0.7ms | Allocations: 2429)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-14 01:51:03 +0900
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 63)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:36
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2079)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.5ms | Allocations: 2321)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-14 01:51:04 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 283)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:36
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2301)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.5ms | Allocations: 2542)
+
+
+Started GET "/dishes?cuisine=%E4%B8%AD%E8%8F%AF&main_dish=%E9%BA%BA&commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-14 01:51:12 +0900
+Processing by DishesController#index as HTML
+  Parameters: {"cuisine"=>"中華", "main_dish"=>"麺", "commit"=>"提案"}
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2 LIMIT $3[0m  [["cuisine", "中華"], ["main_dish", "麺"], ["LIMIT", 1]]
+  ↳ app/views/dishes/index.html.erb:5
+  [1m[36mDish Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2[0m  [["cuisine", "中華"], ["main_dish", "麺"]]
+  ↳ app/views/dishes/index.html.erb:6
+  [1m[36mDish Load (0.8ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2[0m  [["cuisine", "中華"], ["main_dish", "麺"]]
+  ↳ app/views/dishes/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/dishes/index.html.erb:12
+  Rendered dishes/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 3377)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 4527)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 4.4ms | Allocations: 4818)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-14 01:51:16 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 283)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:36
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2283)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms | Allocations: 2524)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-14 01:51:19 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 63)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:36
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2078)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 2317)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2025-11-14 01:51:47 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 10ms (ActiveRecord: 0.7ms | Allocations: 1796)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-14 01:51:47 +0900
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 1473)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 1715)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-14 01:51:47 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2201)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2746)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-14 01:51:48 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1680)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1921)
+
+
+Started GET "/dishes?cuisine=%E5%92%8C%E9%A3%9F&main_dish=%E3%81%9D%E3%81%AE%E4%BB%96&commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-14 01:51:51 +0900
+Processing by DishesController#index as HTML
+  Parameters: {"cuisine"=>"和食", "main_dish"=>"その他", "commit"=>"提案"}
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2 LIMIT $3[0m  [["cuisine", "和食"], ["main_dish", "その他"], ["LIMIT", 1]]
+  ↳ app/views/dishes/index.html.erb:5
+  [1m[36mDish Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2[0m  [["cuisine", "和食"], ["main_dish", "その他"]]
+  ↳ app/views/dishes/index.html.erb:6
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2[0m  [["cuisine", "和食"], ["main_dish", "その他"]]
+  ↳ app/views/dishes/index.html.erb:9
+  Rendered dishes/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1811)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2996)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 2.2ms | Allocations: 3287)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-14 01:51:52 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1956)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 2518)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-11-14 01:51:53 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2186)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 2727)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-11-14 01:51:54 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1950)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2518)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-11-14 01:52:00 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ranteq@kr.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ranteq@kr.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 154ms (ActiveRecord: 0.5ms | Allocations: 2429)
+
+
+Started GET "/" for 127.0.0.1 at 2025-11-14 01:52:00 +0900
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 63)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:36
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2106)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 2348)
+
+
+Started GET "/choices/new" for 127.0.0.1 at 2025-11-14 01:52:15 +0900
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 283)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:36
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2307)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 2548)
+
+
+Started GET "/dishes?cuisine=%E5%92%8C%E9%A3%9F&main_dish=%E9%BA%BA&commit=%E6%8F%90%E6%A1%88" for 127.0.0.1 at 2025-11-14 01:52:23 +0900
+Processing by DishesController#index as HTML
+  Parameters: {"cuisine"=>"和食", "main_dish"=>"麺", "commit"=>"提案"}
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2 LIMIT $3[0m  [["cuisine", "和食"], ["main_dish", "麺"], ["LIMIT", 1]]
+  ↳ app/views/dishes/index.html.erb:5
+  [1m[36mDish Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2[0m  [["cuisine", "和食"], ["main_dish", "麺"]]
+  ↳ app/views/dishes/index.html.erb:6
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2[0m  [["cuisine", "和食"], ["main_dish", "麺"]]
+  ↳ app/views/dishes/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/dishes/index.html.erb:12
+  Rendered dishes/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3349)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4499)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 2.8ms | Allocations: 4790)
+
+
