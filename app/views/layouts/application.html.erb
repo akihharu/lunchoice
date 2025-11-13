@@ -11,7 +11,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <%# 💡 一時的なスタイルを追加してレイアウトを確認します %>
     <style>
       .container { max-width: 1920px; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; }
       header { background-color: #FF9500; padding: 20px 0; }
@@ -25,8 +24,6 @@
   </head>
 
   <body>
-    <%# ----------------------- %>
-    <%# 1. ヘッダー %>
     <header>
       <div class="container">
         <h1>
@@ -34,7 +31,14 @@
         </h1>
         <nav>
           <% if user_signed_in? %>
-            <%# ログイン済みの表示 %>
+            <%= link_to "食事履歴", choices_path, style: "
+              padding: 5px 10px; 
+              border: 1px solid #000; 
+              border-radius: 5px; 
+              margin-right: 10px;
+              background-color: #ffe110; 
+              color: black !important;
+            " %>
             <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, style: "
               padding: 5px 10px; 
               border: 1px solid #000; 
@@ -43,9 +47,7 @@
               color: black !important;
               margin-right: 10px;
             " %>
-            <%# 今後、ユーザー詳細ページへのリンクもここに配置します %>
           <% else %>
-            <%# 未ログインの表示 %>
             <%= link_to "ログイン", new_user_session_path, style: "
               padding: 5px 10px; 
               border: 1px solid #000; 
@@ -67,17 +69,14 @@
     </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%# 2. ページ固有の内容を表示 (Top#indexの内容がここに入る) %>
     <main>
       <%= yield %>
     </main>
     
-    <%# 3. フッター %>
     <footer>
       <div class="container">
         <p>&copy; <%= Time.current.year %> LUNCHOICE. All rights reserved.</p>
       </div>
     </footer>
-    <%# ----------------------- %>
   </body>
 </html>
