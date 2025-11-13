@@ -1,0 +1,147 @@
+<div class="dishes-container">
+  <h2>今日のランチの候補</h2>
+
+  <%# 料理が見つかった場合の表示 %>
+  <% if @dishes.any? %>
+    <p>選択された条件に合う料理が <%= @dishes.count %> 件見つかりました！</p>
+    
+    <ul class="dish-list">
+      <% @dishes.each do |dish| %>
+        <li class="dish-item">
+          <span class="dish-name"><%= dish.name %></span>
+          <% if user_signed_in? %>
+            <%= form_with url: choices_path, method: :post, local: true, class: "record-form" do %>
+              <%= hidden_field_tag :dish_id, dish.id %>
+              <%= submit_tag "記録", class: "btn-record" %>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <%# 料理が見つからなかった場合の表示 %>
+    <div class="no-results">
+      <p>ごめんなさい、選択された条件に合う料理は見つかりませんでした😭</p>
+      <p>別の組み合わせを試してみてください。</p>
+    </div>
+  <% end %>
+
+  <% if !user_signed_in? %>
+      <div class="login-prompt">
+        <p>記録するにはログインが必要です</p>
+        <%= link_to 'サインアップ', new_user_registration_path, class: 'btn-prompt' %>
+        <%= link_to 'ログイン', new_user_session_path, class: 'btn-prompt' %>
+      </div>
+  <% end %>
+
+  <div class="actions">
+    <%= link_to '選択画面に戻る', new_choice_path, class: 'btn-back' %>
+  </div>
+</div>
+
+<%# ----------------------------------- %>
+<%# スタイルを追加します %>
+<%# ----------------------------------- %>
+<style>
+.record-form {
+  display: inline-block;
+  margin-left: 10px;
+}
+.btn-record {
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+}
+.btn-record:hover {
+  background-color: #218838;
+}
+.login-prompt {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  text-align: center;
+}
+.login-prompt p {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 15px;
+}
+.btn-prompt {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.btn-prompt:hover {
+  background-color: #0056b3;
+}
+.dishes-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background-color: white;
+}
+.dishes-container h2 {
+  font-family: 'Shantell Sans', cursive;
+  color: #FF9500;
+  margin-bottom: 20px;
+}
+.dish-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+.dish-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 1.1em;
+  text-align: left;
+}
+.dish-name {
+  font-weight: bold;
+  color: #333;
+}
+.no-results {
+  padding: 30px;
+  background-color: #ffeaea;
+  border: 1px solid #ff000030;
+  border-radius: 5px;
+  color: #d9534f;
+  margin-top: 20px;
+}
+.btn-back {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.btn-back:hover {
+  background-color: #5a6268;
+}
+</style>
