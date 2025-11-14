@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  if Rails.env.production?
-    get '/seed', to: 'seed#run'
-  end
   
   devise_for :users
   root 'top#index'
@@ -10,5 +7,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :dishes, only: [:index] 
-  resources :choices, only: [:create]
+  resources :choices, only: [:create, :index]
 end
