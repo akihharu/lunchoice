@@ -1,7 +1,13 @@
 class ChoicesController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :index]
+
+  def index
+    @choices = current_user.choices.includes(:dish).order(created_at: :desc)
+  end
+
   def new
   end
+  
   def create
     dish = Dish.find(params[:dish_id])
     @choice = current_user.choices.build(
