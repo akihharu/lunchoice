@@ -1,20 +1,16 @@
-<%# app/views/top/index.html.erb - トップページのビュー %>
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
 <div style="text-align: center; ">
   <h1 style="text-align: center; font-size: 9em; font-family: 'Courgette', cursive; font-weight: 400; font-style: normal;">
   lunchoice
   </h1>
-  <%# ページタイトル - サービスの本質を伝える %>
   <h2>休日のランチ、決めてみませんか？</h2>
   
-  <%# サービスの説明 - 最小限に %>
   <p style="margin-top: 25px; font-size: 1.2em; max-width: 600px; margin: 10px auto;">
     LUNCHOICEは、「休日のお昼、何食べる？」を解決する、<br>
     休日のランチ決定をサポートするサービスです。
   </p>
   
-  <%# メインの行動喚起ボタン %>
 <%= link_to "今の気分は？", new_choice_path, style: 
     "display: inline-block; 
     margin-top: 40px; 
@@ -29,7 +25,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
 %>
   
-  <%# サブの行動喚起 - ログイン済みのユーザー向け %>
   <p style="margin-top: 50px; font-size: 0.9em;">
     すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら", new_user_session_path, style: "color: #007bff; text-decoration: none;" %>
   </p>
