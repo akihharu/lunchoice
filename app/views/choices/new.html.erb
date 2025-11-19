@@ -2,52 +2,39 @@
   <h2>今日の昼食、何にする？</h2>
   <p>大カテゴリと主食を選択して、候補を提案してもらいましょう！</p>
   
-  <%# フォームの送信先を /dishes (料理一覧ページ) に設定します %>
-  <%# GETメソッドで送信し、パラメータを次の画面に渡します %>
   <%= form_with url: dishes_path, method: :get, local: true, class: "selection-form" do %>
-    
-    <%# ----------------------------------- %>
 
     <div class="category-group">
       <h3>1. 大カテゴリ</h3>
       <% ['和食', '洋食', '中華'].each do |cuisine| %>
         <% id = "cuisine_#{cuisine}" %> 
         
-        <%# inputとlabelを明確に紐づけるため、IDを定義 %>
         <%= radio_button_tag :cuisine, cuisine, false, id: id, class: "cuisine-radio" %>
         
-        <%# label タグの for 属性に input の id を指定して紐づけます %>
         <label for="<%= id %>" class="radio-label">
           <%= cuisine %>
         </label>
       <% end %>
     </div>
     
-    <%# ----------------------------------- %>
-    <%# 2. 主食 (Main Dish) の選択 %>
     <div class="category-group">
       <h3>2. 主食</h3>
       <% ['米', '麺', 'その他'].each do |main_dish| %>
         <% id = "main_dish_#{main_dish}" %> 
     
-        <%# inputとlabelを明確に紐づけるため、IDを定義 %>
         <%= radio_button_tag :main_dish, main_dish, false, id: id, class: "main-dish-radio" %>
         
-        <%# label タグの for 属性に input の id を指定して紐づけます %>
         <label for="<%= id %>" class="radio-label <%= 'option-disabled' if main_dish == 'その他' %>">
           <%= main_dish %>
         </label>
       <% end %>
     </div>
-    <%# ----------------------------------- %>
-    <%# 3. 提案ボタン %>
     <div class="actions">
       <%= submit_tag "提案", class: "btn-submit", disabled: true %>
     </div>
   <% end %>
 </div>
 
-<%# スタイル（app/views/layouts/application.html.erbのmain要素の幅を考慮したデザインです） %>
 <style>
 .selection-container {
   max-width: 600px;
@@ -76,8 +63,8 @@
   text-align: center;
 }
 .actions {
-  text-align: center; /* ボタンを含む要素内のコンテンツを中央寄せにする */
-  margin-top: 20px;   /* 上部の余白を確保 */
+  text-align: center;
+  margin-top: 20px;
 }
 .category-group h3 {
   margin-top: 0;
@@ -139,7 +126,6 @@ function initializeChoiceSelection() {
   const mainDishRadios = document.querySelectorAll('.main-dish-radio');
   const submitButton = document.querySelector('.btn-submit');    
 
-  // --- 機能1: 提案ボタンの有効/無効チェック ---
   function checkFormValidity() {
     let cuisineSelected = Array.from(cuisineRadios).some(radio => radio.checked);
     let mainDishSelected = Array.from(mainDishRadios).some(radio => radio.checked);
@@ -153,7 +139,6 @@ function initializeChoiceSelection() {
     }
   }
   
-  // --- 機能2: 中華選択時の「その他」無効化制御 ---
   function handleChukaDisable(radio) {
     if (radio.value === '中華' && radio.checked) {
       if (otherMainDishInput) {
@@ -179,21 +164,18 @@ function initializeChoiceSelection() {
     }
   }
 
-  // --- イベントリスナー設定 ---
   cuisineRadios.forEach(radio => {
     radio.addEventListener('change', function() {
-      handleChukaDisable(this); // 中華無効化ロジックを実行
-      checkFormValidity();       // ボタン有効/無効チェックを実行
+      handleChukaDisable(this);
+      checkFormValidity();
     });
   });
   
   mainDishRadios.forEach(radio => {
-    radio.addEventListener('change', checkFormValidity); // 主食変更時、ボタン有効/無効チェックを実行
+    radio.addEventListener('change', checkFormValidity);
   });
 
-  // --- 初期ロード時の実行 ---
-  // ページ遷移直後の状態を正しく設定する
-  cuisineRadios.forEach(radio => handleChukaDisable(radio)); // 初期の中華チェック
-  checkFormValidity(); // 初期ボタンチェック
+  cuisineRadios.forEach(radio => handleChukaDisable(radio));
+  checkFormValidity();
 }
 </script>
