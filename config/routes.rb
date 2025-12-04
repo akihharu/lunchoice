@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+if Rails.env.production?
+  post '/seed', to: 'seeds#run'
+end
+
   devise_for :users
   root 'top#index'
   get 'choices/new', to: 'choices#new', as: 'new_choice'
