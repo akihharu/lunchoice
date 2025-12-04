@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 if Rails.env.production?
-  post '/seed', to: 'seeds#run'
+  get '/seed', to: 'seed#run'
 end
 
   devise_for :users
