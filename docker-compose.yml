@@ -5,7 +5,6 @@ services:
     build: .
     volumes:
       - .:/app
-      - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
     environment:
@@ -28,4 +27,3 @@ services:
 
 volumes:
   postgres_data:
-  bundle:

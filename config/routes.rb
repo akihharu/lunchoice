@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  get 'terms', to: 'static_pages#terms'
+  get 'privacy', to: 'static_pages#privacy'
+  get 'guide', to: 'static_pages#guide'
   
 #if Rails.env.production?
 #  get '/seed', to: 'seed#run'
 #end
 
-  devise_for :users
+  devise_for :users,controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+  
   root 'top#index'
   get 'choices/new', to: 'choices#new', as: 'new_choice'
   get 'dishes', to: 'dishes#index'
@@ -12,4 +18,6 @@ Rails.application.routes.draw do
 
   resources :dishes, only: [:index] 
   resources :choices, only: [:create, :index]
+  resources :posts
+  resources :users, only: [:show]
 end

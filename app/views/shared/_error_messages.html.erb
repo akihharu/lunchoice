@@ -1,0 +1,13 @@
+<% if object.errors.any? %>
+  <div class="alert alert-danger">
+    <h4 class="alert-heading">
+      <%= pluralize(object.errors.count, "error") %> prohibited this <%= object.class.name.downcase %> from being saved:
+    </h4>
+    <hr>
+    <ul class="mb-0">
+      <% object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

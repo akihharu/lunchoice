@@ -3,6 +3,16 @@ class ChoicesController < ApplicationController
 
   def index
     @choices = current_user.choices.includes(:dish).order(created_at: :desc)
+
+    dish_counts = current_user.choices.joins(:dish).group("dishes.name").count
+    
+    if dish_counts.present?
+      @chart_labels = dish_counts.keys
+      @chart_data = dish_counts.values
+    else
+      @chart_labels = []
+      @chart_data = []
+    end
   end
 
   def new
