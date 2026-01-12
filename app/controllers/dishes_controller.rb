@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
-  
+
   def index
     cuisine = params[:cuisine]
     main_dish = params[:main_dish]
