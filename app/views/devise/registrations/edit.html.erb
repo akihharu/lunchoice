@@ -31,10 +31,12 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
           </div>
 
-          <div class="mb-4 border-top pt-3">
-            <%= f.label :current_password, "現在のパスワード", class: "form-label" %> <small class="text-danger">(変更を確認するために入力してください)</small>
-            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
-          </div>
+          <% if @user.provider.blank? %>
+            <div class="mb-4 border-top pt-3">
+              <%= f.label :current_password, "現在のパスワード", class: "form-label" %> <small class="text-danger">(変更を確認するために入力してください)</small>
+              <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+          <% end %>
 
           <div class="d-grid gap-2">
             <%= f.submit "更新する", class: "btn btn-primary btn-lg" %>
