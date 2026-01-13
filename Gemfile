@@ -46,9 +46,26 @@ gem "bootsnap", require: false
 
 gem 'devise'
 
+gem 'image_processing', '~> 1.12'
+
+gem 'omniauth-google-oauth2', '~> 1.1'
+
+gem 'omniauth-rails_csrf_protection'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'kaminari'
+
+gem 'aws-sdk-s3'
+
+gem 'meta-tags'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'rspec-rails', '~> 6.0'
+    gem 'factory_bot_rails'
+    gem 'faker'
 end
 
 group :development do
@@ -65,5 +82,5 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver"
+  gem 'simplecov', require: false
 end

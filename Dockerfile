@@ -8,7 +8,9 @@ RUN apt-get update -qq && apt-get install -y \
   libpq-dev \
   nodejs \
   npm \
-  yarn
+  yarn \
+  libvips \
+  libvips-dev
 
 ENV RAILS_ENV="development" \
     BUNDLE_PATH="/usr/local/bundle" \
