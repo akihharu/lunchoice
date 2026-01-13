@@ -31,7 +31,7 @@ RSpec.describe "Posts", type: :system do
     fill_in "user[email]", with: "wrong@example.com"
     fill_in "user[password]", with: "wrongpassword"
     click_button "ログイン"
-    expect(page).to have_content "Eメールまたはパスワードが違います"
+    expect(page).to have_content "メールアドレスまたはパスワードが違います"
   end
   it "料理を選択せずに投稿するとエラーが表示されること" do
     visit new_user_session_path
