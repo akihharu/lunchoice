@@ -1,15 +1,446 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+/* --- Application --- */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 15px;
+}
+
+header {
+  background-color: #FF9500 !important;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-family: 'Courgette', cursive;
+  font-size: 2.2rem !important;
+  color: #000 !important;
+  line-height: 1;
+  transform: translateY(4px);
+}
+
+.btn-lunch-theme { 
+  background-color: #ffe110 !important;
+  color: black !important;
+  border: 1px solid #000 !important;
+  border-radius: 5px !important;
+  padding: 8px 15px !important;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.notice, .alert {
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
+.notice { background-color: #e3f2fd; color: #0d47a1; }
+.alert { background-color: #ffebee; color: #b71c1c; }
+
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: auto;
+}
+.footer-link {
+  color: #adb5bd;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+}
+.footer-link:hover { color: #FF9500; }
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #FF9500;
+    padding: 15px;
+  }
+}
+/* --- choice-index --- */
+.history-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background-color: white;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+.chart-wrapper {
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.history-container h2 {
+  text-align: center;
+  color: #FF9500;
+  margin-bottom: 30px;
+}
+.history-list { list-style: none; padding: 0; }
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #fcfcfc;
+  border-radius: 5px;
+}
+.dish-name { font-weight: bold; font-size: 1.2em; color: #333; }
+.details { margin-left: 10px; color: #6c757d; font-size: 0.9em; }
+.record-date { font-size: 0.9em; color: #888; }
+.btn-select, .btn-back {
+  display: inline-block;
+  padding: 10px 25px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-select { background-color: #FF9500; }
+.btn-back { background-color: #6c757d; }
+.record-count { margin-bottom: 20px; color: #555; }
+
+/* --- choice-new --- */
+.selection-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background-color: white;
+}
+.selection-container h2 {
+  font-family: 'Shantell Sans', cursive;
+  color: #FF9500;
+  margin-bottom: 5px;
+}
+.selection-container p {
+  margin-bottom: 30px;
+  color: #555;
+}
+.category-group {
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  text-align: center;
+}
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+.category-group h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+.radio-label {
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  transition: all 0.2s;
+  background-color: #f9f9f9;
+}
+.radio-label:hover {
+  background-color: #ffe110;
+  border-color: #FF9500;
+}
+.cuisine-radio:checked + label,
+.main-dish-radio:checked + label {
+  background-color: #FF9500;
+  color: white;
+  border-color: #FF9500;
+}
+input[type="radio"] {
+  display: none;
+}
+.btn-submit {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.2s;
+}
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+.btn-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* --- devise-r-new --- */
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: white;
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.field {
+  margin-bottom: 15px;
+}
+.field input[type="email"],
+.field input[type="text"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.btn-auth {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF9500;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.auth-links {
+  text-align: center;
+  margin-top: 20px;
+}
+.auth-links a {
+  color: #337ab7;
+  text-decoration: none;
+}
+/* --- devise-s-new --- */
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: white;
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.field {
+  margin-bottom: 15px;
+}
+.field input[type="email"],
+.field input[type="text"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.btn-auth {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF9500;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.auth-links {
+  text-align: center;
+  margin-top: 20px;
+}
+.auth-links a {
+  color: #337ab7;
+  text-decoration: none;
+}
+.omniauth-section {
+  margin-top: 20px;
+  text-align: center;
+}
+.separator {
+  position: relative;
+  margin-bottom: 20px;
+  color: #888;
+  font-size: 14px;
+}
+.separator::before, .separator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #ddd;
+}
+.separator::before { left: 0; }
+.separator::after { right: 0; }
+
+.btn-google {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  color: #757575;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+.btn-google:hover {
+  background-color: #f7f7f7;
+}
+.google-icon {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #4285F4;
+}
+/* --- dish-index --- */
+.record-form {
+  display: inline-block;
+  margin-left: 10px;
+}
+.btn-record {
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+}
+.btn-record:hover {
+  background-color: #218838;
+}
+.login-prompt {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  text-align: center;
+}
+.login-prompt p {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 15px;
+}
+.btn-prompt {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.btn-prompt:hover {
+  background-color: #0056b3;
+}
+.dishes-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background-color: white;
+}
+.dishes-container h2 {
+  font-family: 'Shantell Sans', cursive;
+  color: #FF9500;
+  margin-bottom: 20px;
+}
+.dish-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+.dish-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 1.1em;
+  text-align: left;
+}
+.dish-name {
+  font-weight: bold;
+  color: #333;
+}
+.no-results {
+  padding: 30px;
+  background-color: #ffeaea;
+  border: 1px solid #ff000030;
+  border-radius: 5px;
+  color: #d9534f;
+  margin-top: 20px;
+}
+.btn-back {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.btn-back:hover {
+  background-color: #5a6268;
+}

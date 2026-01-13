@@ -1,8 +1,22 @@
 <div class="history-container">
   <h2><%= current_user.name %> さんのランチ記録</h2>
 
+  <div class="graph-section mb-5">
+    <h3 class="section-title text-center">
+      <i class="bi bi-pie-chart-fill me-2"></i>ランチ統計（料理別割合）
+    </h3>
+    <div class="chart-wrapper shadow-sm">
+      <% if @chart_data.present? %>
+        <canvas id="lunchChart"></canvas>
+      <% else %>
+        <p class="no-data-text text-center text-muted">記録が増えるとここにグラフが表示されます</p>
+      <% end %>
+    </div>
+  </div>
+  <hr class="my-5">
+
   <% if @choices.any? %>
-    <p>これまでに <%= @choices.count %> 件のランチを記録しました。</p>
+    <p class="record-count text-center">これまでに <strong><%= @choices.count %></strong> 件のランチを記録しました。</p>
     
     <ul class="history-list">
       <% @choices.each do |choice| %>
@@ -12,84 +26,57 @@
             <span class="details">(<%= choice.cuisin_at_choice %>・<%= choice.main_dish_at_choice %>)</span>
           </div>
           <div class="record-date">
-            記録日: <%= choice.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+            <%= choice.created_at.strftime("%Y年%m月%d日 %H:%M") %>
           </div>
         </li>
       <% end %>
     </ul>
   <% else %>
-    <div class="no-history">
+    <div class="no-history text-center">
       <p>まだランチの記録がありません。</p>
       <%= link_to 'ランチを選択する', new_choice_path, class: 'btn-select' %>
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="actions text-center mt-4">
     <%= link_to 'トップページに戻る', root_path, class: 'btn-back' %>
   </div>
 </div>
 
-<style>
-.history-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  background-color: white;
-}
-.history-container h2 {
-  text-align: center;
-  color: #FF9500;
-  margin-bottom: 30px;
-}
-.history-list {
-  list-style: none;
-  padding: 0;
-}
-.history-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #eee;
-  background-color: #fcfcfc;
-  border-radius: 5px;
-}
-.dish-name {
-  font-weight: bold;
-  font-size: 1.2em;
-  color: #333;
-}
-.details {
-  margin-left: 10px;
-  color: #6c757d;
-  font-size: 0.9em;
-}
-.record-date {
-  font-size: 0.9em;
-  color: #888;
-}
-.no-history {
-  text-align: center;
-  padding: 40px 20px;
-  border: 1px dashed #ccc;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-.btn-select, .btn-back {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 20px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.2s;
-}
-.btn-back {
-  background-color: #6c757d;
-}
-</style>
+<script>
+  (function() {
+    const drawChart = () => {
+      const canvas = document.getElementById('lunchChart');
+      if (!canvas) return;
+
+      if (typeof Chart === 'undefined') return;
+
+      const existing = Chart.getChart(canvas);
+      if (existing) existing.destroy();
+
+      new Chart(canvas, {
+        type: 'pie',
+        data: {
+          labels: <%= raw @chart_labels.to_json %>,
+          datasets: [{
+            data: <%= @chart_data.to_json %>,
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'],
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+    };
+
+    document.addEventListener('turbo:load', drawChart);
+    
+    if (document.readyState !== 'loading') {
+      drawChart();
+    } else {
+      document.addEventListener('DOMContentLoaded', drawChart);
+    }
+  })();
+</script>

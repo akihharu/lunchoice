@@ -17,55 +17,19 @@
     </div>
   <% end %>
 
+  <div class="omniauth-section">
+    <div class="separator">または</div>
+    <%= button_to user_google_oauth2_omniauth_authorize_path, 
+                   method: :post, 
+                   data: { turbo: false }, 
+                   class: "btn-google" do %>
+      <span class="google-icon">G</span> Googleでログイン
+    <% end %>
+  </div>
+
+
   <div class="auth-links">
     <%= link_to "トップページへ", root_path %> |
     <%= link_to "サインアップへ", new_user_registration_path %>
   </div>
 </div>
-
-<style>
-.form-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  background-color: white;
-}
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.field {
-  margin-bottom: 15px;
-}
-.field input[type="email"],
-.field input[type="text"],
-.field input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-.btn-auth {
-  width: 100%;
-  padding: 10px;
-  background-color: #FF9500;
-  color: black;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
-}
-.auth-links {
-  text-align: center;
-  margin-top: 20px;
-}
-.auth-links a {
-  color: #337ab7;
-  text-decoration: none;
-}
-</style>
