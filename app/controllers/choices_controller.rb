@@ -28,7 +28,7 @@ class ChoicesController < ApplicationController
 
     if @choice.save
       flash[:notice] = "#{dish.name} を今日のランチに記録しました！"
-      redirect_to root_path
+      redirect_to choices_path
     else
       flash[:alert] = "ランチの記録に失敗しました: #{@choice.errors.full_messages.join(', ')}"
       redirect_back fallback_location: dishes_path
