@@ -28,8 +28,10 @@
 <div style="margin-top: 20px;">
   <%= link_to "みんなのランチを見る", posts_path, style: "color: #007bff; text-decoration: underline; font-weight: bold;" %>
 </div>
-  
+
+<% unless user_signed_in? %>
   <p style="margin-top: 50px; font-size: 0.9em;">
     すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら", new_user_session_path, style: "color: #007bff; text-decoration: none;" %>
   </p>
+<% end %>
 </div>
