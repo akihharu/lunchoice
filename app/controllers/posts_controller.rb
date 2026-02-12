@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
+  before_action :set_dishes, only: [:new, :create, :edit, :update]
 
   def index
     @posts = Post.all.includes(:user, :dish).order(created_at: :desc)
@@ -23,7 +24,6 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.build
-    @dishes = Dish.all
   end
 
   def create
@@ -32,20 +32,17 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: '新しいランチを投稿しました！'
     else
-      @dishes = Dish.all
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @dishes = Dish.all
   end
 
   def update
     if @post.update(post_params)
       redirect_to posts_path, notice: '投稿を更新しました！'
     else
-      @dishes = Dish.all
       render :edit, status: :unprocessable_entity
     end
   end
@@ -69,5 +66,9 @@ class PostsController < ApplicationController
     unless @post.user == current_user
       redirect_to posts_path, alert: '他人の投稿は編集・削除できません'
     end
+  end
+
+  def set_dishes
+    @dishes = Dish.all
   end
 end
