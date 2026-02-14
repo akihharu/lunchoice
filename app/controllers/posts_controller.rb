@@ -5,19 +5,11 @@ class PostsController < ApplicationController
   before_action :set_dishes, only: [:new, :create, :edit, :update]
 
   def index
-    @posts = Post.all.includes(:user, :dish).order(created_at: :desc)
-
-    if params[:query].present?
-      @posts = @posts.joins(:dish).where("dishes.name LIKE ?", "%#{params[:query]}%")
-    end
-
-    if params[:dish_id].present?
-      @posts = @posts.where(dish_id: params[:dish_id])
-    end
-
-    if params[:cuisine].present?
-      @posts = @posts.joins(:dish).where(dishes: { cuisine: params[:cuisine] })
-    end
+    @posts = Post.by_query(params[:query])
+                 .by_dish(params[:dish_id])
+                 .by_cuisine(params[:cuisine])
+                 .includes(:user, :dish)
+                 .order(created_at: :desc)
 
     @posts = @posts.page(params[:page]).per(10)
   end
