@@ -11,4 +11,9 @@ class Post < ApplicationRecord
 
   validates :user_id, presence: true
   validates :dish_id, presence: true
+
+  scope :by_query, ->(query) {joins(:dish).where("dishes.name LIKE ?", "%#{query}%") if query.present?}
+  scope :by_dish, ->(dish_id) {where(dish_id: dish_id) if dish_id.present?}
+  scope :by_cuisine, ->(cuisine) {joins(:dish).where(dishes: { cuisine: cuisine}) if cuisine.present?}
+
 end
