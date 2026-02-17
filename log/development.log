@@ -30917,3 +30917,1594 @@ puma (7.1.0) lib/puma/request.rb:100:in `handle_request'
 puma (7.1.0) lib/puma/server.rb:503:in `process_client'
 puma (7.1.0) lib/puma/server.rb:262:in `block in run'
 puma (7.1.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:41:45 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 916)
+  Rendered layout layouts/application.html.erb (Duration: 70.6ms | Allocations: 43984)
+Completed 200 OK in 382ms (Views: 74.4ms | ActiveRecord: 0.0ms | Allocations: 331091)
+
+
+Started GET "/posts" for 172.29.0.1 at 2026-02-17 13:41:47 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mDish Load (1.9ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:12
+  [1m[36mDish Pluck (0.2ms)[0m  [1m[34mSELECT "dishes"."cuisine" FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 1], ["id", 51]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 114.2ms | Allocations: 56984)
+  Rendered layout layouts/application.html.erb (Duration: 117.6ms | Allocations: 60867)
+Completed 200 OK in 186ms (Views: 91.2ms | ActiveRecord: 47.0ms | Allocations: 69704)
+
+
+Started GET "/choices/new" for 172.29.0.1 at 2026-02-17 13:41:49 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 898)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4957)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5531)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 13:41:51 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2000)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5990)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 7536)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:41:55 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 296)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4135)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 4383)
+
+
+Started POST "/users/auth/google_oauth2" for 172.29.0.1 at 2026-02-17 13:41:55 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:42:02 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 350)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4224)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4467)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 13:42:04 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 218)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1832)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 5691)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 6926)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:42:07 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 326)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4165)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4408)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 13:42:11 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4561)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 5178)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 13:42:16 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4844)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 5472)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:42:17 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4183)
+Completed 200 OK in 4ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4426)
+
+
+Started GET "/choices/new" for 172.29.0.1 at 2026-02-17 13:42:22 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4353)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4598)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 13:43:16 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 4529)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 5136)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:43:36 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4180)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 4423)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 13:43:37 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4566)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 5167)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:43:38 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4207)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 4450)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 13:43:51 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4539)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 5137)
+
+
+Started POST "/users/sign_in" for 172.29.0.1 at 2026-02-17 13:44:35 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kr@12.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "kr@12.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.8ms | Allocations: 8001)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kr@12.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 671)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4517)
+Completed 200 OK in 162ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 5587)
+
+
+Started POST "/users/sign_in" for 172.29.0.1 at 2026-02-17 13:44:52 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kr2@12.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "kr2@12.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 156ms (ActiveRecord: 0.5ms | Allocations: 1598)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kr2@12.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 662)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4480)
+Completed 200 OK in 157ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4969)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 13:45:03 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 4873)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 5514)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 13:45:05 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4553)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 5174)
+
+
+Started POST "/users" for 172.29.0.1 at 2026-02-17 13:45:32 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kr@g.com", "name"=>"ネシ", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kr@g.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "kr@g.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-02-17 13:45:32.881401"], ["updated_at", "2026-02-17 13:45:32.881401"], ["name", "ネシ"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 171ms (ActiveRecord: 4.9ms | Allocations: 15129)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:45:32 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 946)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4892)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 5182)
+
+
+Started GET "/choices" for 172.29.0.1 at 2026-02-17 13:45:35 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ChoicesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mChoice Count (4.0ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "dishes"."name" AS "dishes_name" FROM "choices" INNER JOIN "dishes" ON "dishes"."id" = "choices"."dish_id" WHERE "choices"."user_id" = $1 GROUP BY "dishes"."name"[0m  [["user_id", 4]]
+  ↳ app/controllers/choices_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering choices/index.html.erb within layouts/application
+  [1m[36mChoice Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "choices" WHERE "choices"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/choices/index.html.erb:18
+  Rendered choices/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1102)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 5000)
+Completed 200 OK in 31ms (Views: 10.0ms | ActiveRecord: 8.6ms | Allocations: 11634)
+
+
+Started GET "/posts/new" for 172.29.0.1 at 2026-02-17 13:45:37 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 216)
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 18.8ms | Allocations: 3435)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 7367)
+Completed 200 OK in 27ms (Views: 22.4ms | ActiveRecord: 0.9ms | Allocations: 9903)
+
+
+Started POST "/posts" for 172.29.0.1 at 2026-02-17 13:45:39 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"dish_id"=>""}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 1148)
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4611)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 8516)
+Completed 422 Unprocessable Content in 17ms (Views: 11.9ms | ActiveRecord: 0.8ms | Allocations: 11246)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:48:30 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 5881)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 28870)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 5.0ms | Allocations: 30769)
+
+
+Started GET "/posts" for 172.29.0.1 at 2026-02-17 13:48:31 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:12
+  [1m[36mDish Pluck (0.2ms)[0m  [1m[34mSELECT "dishes"."cuisine" FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 1], ["id", 51]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:56
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 55.8ms | Allocations: 32599)
+  Rendered layout layouts/application.html.erb (Duration: 59.3ms | Allocations: 36542)
+Completed 200 OK in 73ms (Views: 47.1ms | ActiveRecord: 14.3ms | Allocations: 43999)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MjIsInB1ciI6ImJsb2JfaWQifX0=--67d159f42193418eb0d725ba74dfebd56e50509a/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2ZpbGwiOlszMDAsMzAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--150227c782a384492e041364c5cae5c39dba82e0/107_20260201230421%E3%81%82%E3%81%84%E3%81%A4%E3%81%84%E3%81%AA%E3%81%84.png" for 172.29.0.1 at 2026-02-17 13:48:31 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--3e9914612aea5507760833c6ac9398000d9bf16f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2ZpbGwiOlszMDAsMzAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--150227c782a384492e041364c5cae5c39dba82e0/okitunesan0%EF%BC%91.png" for 172.29.0.1 at 2026-02-17 13:48:31 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--d74b71d9e67596765d81860865679598950fc5da/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2ZpbGwiOlszMDAsMzAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--150227c782a384492e041364c5cae5c39dba82e0/image%20(1).jpg" for 172.29.0.1 at 2026-02-17 13:48:31 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MjIsInB1ciI6ImJsb2JfaWQifX0=--67d159f42193418eb0d725ba74dfebd56e50509a", "variation_key"=>"[FILTERED]", "filename"=>"107_20260201230421あいついない"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (1.8ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 22], ["variation_digest", "/czK/0os9i/b5ryjRrCaiwLnv+k="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: xcoxqzi33po0454wscdlnasuc1a5 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4Y294cXppMzNwbzA0NTR3c2NkbG5hc3VjMWE1IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjEwN18yMDI2MDIwMTIzMDQyMSUzRiUzRiUzRiUzRiUzRiUzRi53ZWJwXCI7IGZpbGVuYW1lKj1VVEYtOCcnMTA3XzIwMjYwMjAxMjMwNDIxJUUzJTgxJTgyJUUzJTgxJTg0JUUzJTgxJUE0JUUzJTgxJTg0JUUzJTgxJUFBJUUzJTgxJTg0LndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNi0wMi0xN1QxMzo1MzozMS42MjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--eed68cc241a2db95d3eac16ad984098599269537/107_20260201230421%E3%81%82%E3%81%84%E3%81%A4%E3%81%84%E3%81%AA%E3%81%84.webp)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4Y294cXppMzNwbzA0NTR3c2NkbG5hc3VjMWE1IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjEwN18yMDI2MDIwMTIzMDQyMSUzRiUzRiUzRiUzRiUzRiUzRi53ZWJwXCI7IGZpbGVuYW1lKj1VVEYtOCcnMTA3XzIwMjYwMjAxMjMwNDIxJUUzJTgxJTgyJUUzJTgxJTg0JUUzJTgxJUE0JUUzJTgxJTg0JUUzJTgxJUFBJUUzJTgxJTg0LndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNi0wMi0xN1QxMzo1MzozMS42MjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--eed68cc241a2db95d3eac16ad984098599269537/107_20260201230421%E3%81%82%E3%81%84%E3%81%A4%E3%81%84%E3%81%AA%E3%81%84.webp
+Completed 302 Found in 41ms (ActiveRecord: 7.4ms | Allocations: 14608)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4Y294cXppMzNwbzA0NTR3c2NkbG5hc3VjMWE1IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjEwN18yMDI2MDIwMTIzMDQyMSUzRiUzRiUzRiUzRiUzRiUzRi53ZWJwXCI7IGZpbGVuYW1lKj1VVEYtOCcnMTA3XzIwMjYwMjAxMjMwNDIxJUUzJTgxJTgyJUUzJTgxJTg0JUUzJTgxJUE0JUUzJTgxJTg0JUUzJTgxJUFBJUUzJTgxJTg0LndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNi0wMi0xN1QxMzo1MzozMS42MjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--eed68cc241a2db95d3eac16ad984098599269537/107_20260201230421%E3%81%82%E3%81%84%E3%81%A4%E3%81%84%E3%81%AA%E3%81%84.webp" for 172.29.0.1 at 2026-02-17 13:48:31 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--3e9914612aea5507760833c6ac9398000d9bf16f", "variation_key"=>"[FILTERED]", "filename"=>"okitunesan0１"}
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--d74b71d9e67596765d81860865679598950fc5da", "variation_key"=>"[FILTERED]", "filename"=>"image (1)"}
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.4ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 16], ["variation_digest", "/czK/0os9i/b5ryjRrCaiwLnv+k="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (1.7ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 1], ["variation_digest", "/czK/0os9i/b5ryjRrCaiwLnv+k="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (2.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: rs2ciij4fdci11ujvd3by94zr91y (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJyczJjaWlqNGZkY2kxMXVqdmQzYnk5NHpyOTF5IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cImltYWdlICUyODElMjkud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2ltYWdlJTIwJTI4MSUyOS53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjYtMDItMTdUMTM6NTM6MzEuNzE3WiIsInB1ciI6ImJsb2Jfa2V5In19--d0213583db562cbc8067a3dbb9e26d8c392428e4/image%20(1).webp)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJyczJjaWlqNGZkY2kxMXVqdmQzYnk5NHpyOTF5IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cImltYWdlICUyODElMjkud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2ltYWdlJTIwJTI4MSUyOS53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjYtMDItMTdUMTM6NTM6MzEuNzE3WiIsInB1ciI6ImJsb2Jfa2V5In19--d0213583db562cbc8067a3dbb9e26d8c392428e4/image%20(1).webp
+Completed 302 Found in 76ms (ActiveRecord: 31.8ms | Allocations: 23050)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJyczJjaWlqNGZkY2kxMXVqdmQzYnk5NHpyOTF5IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cImltYWdlICUyODElMjkud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2ltYWdlJTIwJTI4MSUyOS53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjYtMDItMTdUMTM6NTM6MzEuNzE3WiIsInB1ciI6ImJsb2Jfa2V5In19--d0213583db562cbc8067a3dbb9e26d8c392428e4/image%20(1).webp" for 172.29.0.1 at 2026-02-17 13:48:31 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[36m  S3 Storage (8.7ms) [0m[34mGenerated URL for file at key: gkb6gcceq12f0yjau9b5an8pz2r7 ()[0m
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 3.6ms | Allocations: 107482)
+
+
+  
+Aws::Sigv4::Errors::MissingCredentialsError (missing credentials, provide credentials with one of the following options:
+  - :access_key_id and :secret_access_key
+  - :credentials
+  - :credentials_provider):
+  
+aws-sigv4 (1.12.1) lib/aws-sigv4/signer.rb:695:in `extract_credentials_provider'
+aws-sigv4 (1.12.1) lib/aws-sigv4/signer.rb:139:in `initialize'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:234:in `new'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:234:in `block in sign_but_dont_send'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/request_callback.rb:118:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/user_agent.rb:101:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/streaming_retry.rb:69:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/s3_signer.rb:78:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/s3_host_id.rb:17:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/http_200_errors.rb:17:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/xml/error_handler.rb:12:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/transfer_encoding.rb:27:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/helpful_socket_errors.rb:12:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/s3_signer.rb:53:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/redirects.rb:20:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/retry_errors.rb:365:in `block in call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/user_agent.rb:92:in `metric'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/retry_errors.rb:385:in `with_metric'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/retry_errors.rb:365:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/http_checksum.rb:20:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/endpoint_pattern.rb:45:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/request_compression.rb:94:in `block in call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/request_compression.rb:104:in `with_metric'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/request_compression.rb:94:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/express_session_auth.rb:43:in `block in call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/express_session_auth.rb:49:in `with_metric'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/express_session_auth.rb:43:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/expect_100_continue.rb:23:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/bucket_name_restrictions.rb:21:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/rest/handler.rb:10:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/recursion_detection.rb:18:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/endpoints.rb:52:in `block in call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/user_agent.rb:92:in `metric'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/endpoints.rb:66:in `with_metrics'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/endpoints.rb:52:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/endpoint_discovery.rb:84:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/endpoint.rb:46:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/param_validator.rb:26:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/raise_response_errors.rb:16:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/sse_cpk.rb:24:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/dualstack.rb:21:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/checksum_algorithm.rb:17:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/accelerate.rb:43:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/jsonvalue_converter.rb:16:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/idempotency_token.rb:19:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/param_converter.rb:26:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/request_callback.rb:89:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/response_paging.rb:12:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/response_target.rb:24:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:187:in `block in handle_presigned_url_context'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/telemetry.rb:39:in `block in call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/telemetry/no_op.rb:29:in `in_span'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/telemetry.rb:53:in `span_wrapper'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/telemetry.rb:39:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/request.rb:72:in `send_request'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:148:in `_presigned_request'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:79:in `presigned_url'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/customizations/object.rb:227:in `presigned_url'
+activestorage (7.1.6) lib/active_storage/service/s3_service.rb:120:in `private_url'
+activestorage (7.1.6) lib/active_storage/service.rb:125:in `block in url'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.6) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `instrument'
+activestorage (7.1.6) lib/active_storage/service.rb:165:in `instrument'
+activestorage (7.1.6) lib/active_storage/service.rb:120:in `url'
+activestorage (7.1.6) app/models/active_storage/blob.rb:216:in `url'
+activesupport (7.1.6) lib/active_support/core_ext/module/delegation.rb:359:in `public_send'
+activesupport (7.1.6) lib/active_support/core_ext/module/delegation.rb:359:in `method_missing'
+activesupport (7.1.6) lib/active_support/core_ext/module/delegation.rb:337:in `public_send'
+activesupport (7.1.6) lib/active_support/core_ext/module/delegation.rb:337:in `method_missing'
+activestorage (7.1.6) app/models/active_storage/variant_with_record.rb:36:in `url'
+activestorage (7.1.6) app/controllers/active_storage/representations/redirect_controller.rb:12:in `show'
+actionpack (7.1.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.6) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.6) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.6) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.20) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.20) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.6) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.6) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.6) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.6) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.6) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.6) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.6) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.6) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.6) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.6) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.6) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.6) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.6) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.6) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:882:in `call'
+omniauth (2.1.4) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.4) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.2.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.2.3) lib/rack/etag.rb:29:in `call'
+rack (3.2.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.6) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.6) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.6) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.6) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.2.3) lib/rack/method_override.rb:28:in `call'
+rack (3.2.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.2.3) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.6) lib/rails/engine.rb:536:in `call'
+puma (7.1.0) lib/puma/configuration.rb:300:in `call'
+puma (7.1.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in `process_client'
+puma (7.1.0) lib/puma/server.rb:262:in `block in run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"107_20260201230421あいついない"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 2017)
+
+
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"image (1)"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 478)
+
+
+Started GET "/posts/new" for 172.29.0.1 at 2026-02-17 13:48:33 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 213)
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 3289)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 7232)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.6ms | Allocations: 9734)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--3e9914612aea5507760833c6ac9398000d9bf16f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2ZpbGwiOlszMDAsMzAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--150227c782a384492e041364c5cae5c39dba82e0/okitunesan0%EF%BC%91.png" for 172.29.0.1 at 2026-02-17 13:48:37 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--3e9914612aea5507760833c6ac9398000d9bf16f", "variation_key"=>"[FILTERED]", "filename"=>"okitunesan0１"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.3ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 16], ["variation_digest", "/czK/0os9i/b5ryjRrCaiwLnv+k="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+[36m  S3 Storage (10.8ms) [0m[34mGenerated URL for file at key: gkb6gcceq12f0yjau9b5an8pz2r7 ()[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms | Allocations: 6419)
+
+
+  
+Aws::Sigv4::Errors::MissingCredentialsError (missing credentials, provide credentials with one of the following options:
+  - :access_key_id and :secret_access_key
+  - :credentials
+  - :credentials_provider):
+  
+aws-sigv4 (1.12.1) lib/aws-sigv4/signer.rb:695:in `extract_credentials_provider'
+aws-sigv4 (1.12.1) lib/aws-sigv4/signer.rb:139:in `initialize'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:234:in `new'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:234:in `block in sign_but_dont_send'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/request_callback.rb:118:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/user_agent.rb:101:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/streaming_retry.rb:69:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/s3_signer.rb:78:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/s3_host_id.rb:17:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/http_200_errors.rb:17:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/xml/error_handler.rb:12:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/transfer_encoding.rb:27:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/helpful_socket_errors.rb:12:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/s3_signer.rb:53:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/redirects.rb:20:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/retry_errors.rb:365:in `block in call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/user_agent.rb:92:in `metric'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/retry_errors.rb:385:in `with_metric'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/retry_errors.rb:365:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/http_checksum.rb:20:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/endpoint_pattern.rb:45:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/request_compression.rb:94:in `block in call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/request_compression.rb:104:in `with_metric'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/request_compression.rb:94:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/express_session_auth.rb:43:in `block in call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/express_session_auth.rb:49:in `with_metric'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/express_session_auth.rb:43:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/expect_100_continue.rb:23:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/bucket_name_restrictions.rb:21:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/rest/handler.rb:10:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/recursion_detection.rb:18:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/endpoints.rb:52:in `block in call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/user_agent.rb:92:in `metric'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/endpoints.rb:66:in `with_metrics'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/endpoints.rb:52:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/endpoint_discovery.rb:84:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/endpoint.rb:46:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/param_validator.rb:26:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/raise_response_errors.rb:16:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/sse_cpk.rb:24:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/dualstack.rb:21:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/checksum_algorithm.rb:17:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/plugins/accelerate.rb:43:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/jsonvalue_converter.rb:16:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/idempotency_token.rb:19:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/param_converter.rb:26:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/request_callback.rb:89:in `call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/response_paging.rb:12:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/plugins/response_target.rb:24:in `call'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:187:in `block in handle_presigned_url_context'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/telemetry.rb:39:in `block in call'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/telemetry/no_op.rb:29:in `in_span'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/telemetry.rb:53:in `span_wrapper'
+aws-sdk-core (3.240.0) lib/aws-sdk-core/plugins/telemetry.rb:39:in `call'
+aws-sdk-core (3.240.0) lib/seahorse/client/request.rb:72:in `send_request'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:148:in `_presigned_request'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/presigner.rb:79:in `presigned_url'
+aws-sdk-s3 (1.209.0) lib/aws-sdk-s3/customizations/object.rb:227:in `presigned_url'
+activestorage (7.1.6) lib/active_storage/service/s3_service.rb:120:in `private_url'
+activestorage (7.1.6) lib/active_storage/service.rb:125:in `block in url'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.6) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `instrument'
+activestorage (7.1.6) lib/active_storage/service.rb:165:in `instrument'
+activestorage (7.1.6) lib/active_storage/service.rb:120:in `url'
+activestorage (7.1.6) app/models/active_storage/blob.rb:216:in `url'
+activesupport (7.1.6) lib/active_support/core_ext/module/delegation.rb:359:in `public_send'
+activesupport (7.1.6) lib/active_support/core_ext/module/delegation.rb:359:in `method_missing'
+activesupport (7.1.6) lib/active_support/core_ext/module/delegation.rb:337:in `public_send'
+activesupport (7.1.6) lib/active_support/core_ext/module/delegation.rb:337:in `method_missing'
+activestorage (7.1.6) app/models/active_storage/variant_with_record.rb:36:in `url'
+activestorage (7.1.6) app/controllers/active_storage/representations/redirect_controller.rb:12:in `show'
+actionpack (7.1.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.6) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.6) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.6) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.20) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.20) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.6) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.6) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.6) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.6) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.6) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.6) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.6) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.6) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.6) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.6) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.6) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.6) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.6) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.6) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:882:in `call'
+omniauth (2.1.4) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.4) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.2.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.2.3) lib/rack/etag.rb:29:in `call'
+rack (3.2.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.6) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.6) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.6) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.6) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.2.3) lib/rack/method_override.rb:28:in `call'
+rack (3.2.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.2.3) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.6) lib/rails/engine.rb:536:in `call'
+puma (7.1.0) lib/puma/configuration.rb:300:in `call'
+puma (7.1.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in `process_client'
+puma (7.1.0) lib/puma/server.rb:262:in `block in run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started POST "/posts" for 172.29.0.1 at 2026-02-17 13:48:39 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"dish_id"=>""}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 842)
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4302)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 8230)
+Completed 422 Unprocessable Content in 12ms (Views: 7.8ms | ActiveRecord: 0.6ms | Allocations: 10845)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:48:51 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 927)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4824)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 5066)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:48:51 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 948)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4845)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 5087)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:48:52 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 942)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4876)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 5119)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:48:53 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 927)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4824)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5067)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:48:53 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4814)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5057)
+
+
+Started GET "/posts/new" for 172.29.0.1 at 2026-02-17 13:48:54 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2700)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 6605)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.6ms | Allocations: 8420)
+
+
+Started POST "/posts" for 172.29.0.1 at 2026-02-17 13:48:55 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"dish_id"=>""}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 830)
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4288)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 8197)
+Completed 422 Unprocessable Content in 22ms (Views: 17.5ms | ActiveRecord: 0.7ms | Allocations: 10659)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:52:06 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 5961)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 28956)
+Completed 200 OK in 33ms (Views: 20.2ms | ActiveRecord: 9.9ms | Allocations: 30859)
+
+
+Started GET "/posts" for 172.29.0.1 at 2026-02-17 13:52:06 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mDish Load (0.7ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:12
+  [1m[36mDish Pluck (0.2ms)[0m  [1m[34mSELECT "dishes"."cuisine" FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 1], ["id", 51]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:56
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 47.7ms | Allocations: 32588)
+  Rendered layout layouts/application.html.erb (Duration: 50.7ms | Allocations: 36509)
+Completed 200 OK in 64ms (Views: 37.7ms | ActiveRecord: 15.3ms | Allocations: 43984)
+
+
+Started GET "/posts/new" for 172.29.0.1 at 2026-02-17 13:52:07 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 213)
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3286)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 7182)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.6ms | Allocations: 9651)
+
+
+Started POST "/posts" for 172.29.0.1 at 2026-02-17 13:52:08 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"dish_id"=>""}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 852)
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 4312)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 8241)
+Completed 422 Unprocessable Content in 18ms (Views: 9.1ms | ActiveRecord: 0.8ms | Allocations: 10880)
+
+
+Started GET "/users/4" for 172.29.0.1 at 2026-02-17 13:53:48 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:12
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 4], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1683)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5612)
+Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 1.7ms | Allocations: 8786)
+
+
+Started GET "/posts/new" for 172.29.0.1 at 2026-02-17 13:53:51 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2700)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 6611)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 1.0ms | Allocations: 8440)
+
+
+Started GET "/choices" for 172.29.0.1 at 2026-02-17 13:53:51 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ChoicesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mChoice Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "dishes"."name" AS "dishes_name" FROM "choices" INNER JOIN "dishes" ON "dishes"."id" = "choices"."dish_id" WHERE "choices"."user_id" = $1 GROUP BY "dishes"."name"[0m  [["user_id", 4]]
+  ↳ app/controllers/choices_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering choices/index.html.erb within layouts/application
+  [1m[36mChoice Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "choices" WHERE "choices"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/choices/index.html.erb:18
+  Rendered choices/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1095)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 5006)
+Completed 200 OK in 22ms (Views: 7.3ms | ActiveRecord: 6.1ms | Allocations: 10366)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 13:53:53 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:32
+  Rendered top/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4834)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 5077)
+
+
+Started GET "/choices/new" for 172.29.0.1 at 2026-02-17 13:53:53 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 863)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:52
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 5634)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 5944)
+
+
+Started GET "/dishes?cuisine=%E5%92%8C%E9%A3%9F&main_dish=%E9%BA%BA&commit=%E6%8F%90%E6%A1%88" for 172.29.0.1 at 2026-02-17 13:53:55 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DishesController#index as HTML
+  Parameters: {"cuisine"=>"和食", "main_dish"=>"麺", "commit"=>"提案"}
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2 LIMIT $3[0m  [["cuisine", "和食"], ["main_dish", "麺"], ["LIMIT", 1]]
+  ↳ app/views/dishes/index.html.erb:4
+  [1m[36mDish Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2[0m  [["cuisine", "和食"], ["main_dish", "麺"]]
+  ↳ app/views/dishes/index.html.erb:5
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."cuisine" = $1 AND "dishes"."main_dish" = $2[0m  [["cuisine", "和食"], ["main_dish", "麺"]]
+  ↳ app/views/dishes/index.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/dishes/index.html.erb:11
+  Rendered dishes/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3849)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 7746)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 1.3ms | Allocations: 8305)
+
+
+Started POST "/choices" for 172.29.0.1 at 2026-02-17 13:53:56 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ChoicesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "dish_id"=>"11", "commit"=>"記録"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/choices_controller.rb:29:in `create'
+  [1m[36mChoice Create (2.8ms)[0m  [1m[32mINSERT INTO "choices" ("user_id", "dish_id", "cuisin_at_choice", "main_dish_at_choice", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 4], ["dish_id", 11], ["cuisin_at_choice", "和食"], ["main_dish_at_choice", "麺"], ["created_at", "2026-02-17 13:53:56.713304"], ["updated_at", "2026-02-17 13:53:56.713304"]]
+  ↳ app/controllers/choices_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/choices_controller.rb:29:in `create'
+Redirected to http://localhost:3000/choices
+Completed 302 Found in 15ms (ActiveRecord: 4.5ms | Allocations: 8545)
+
+
+Started GET "/choices" for 172.29.0.1 at 2026-02-17 13:53:56 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ChoicesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mChoice Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "dishes"."name" AS "dishes_name" FROM "choices" INNER JOIN "dishes" ON "dishes"."id" = "choices"."dish_id" WHERE "choices"."user_id" = $1 GROUP BY "dishes"."name"[0m  [["user_id", 4]]
+  ↳ app/controllers/choices_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering choices/index.html.erb within layouts/application
+  [1m[36mChoice Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "choices" WHERE "choices"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/choices/index.html.erb:18
+  [1m[36mChoice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "choices" WHERE "choices"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/choices/index.html.erb:19
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."user_id" = $1 ORDER BY "choices"."created_at" DESC[0m  [["user_id", 4]]
+  ↳ app/views/choices/index.html.erb:22
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = $1[0m  [["id", 11]]
+  ↳ app/views/choices/index.html.erb:22
+  Rendered choices/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2129)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 6067)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 1.9ms | Allocations: 8600)
+
+
+Started GET "/posts/new" for 172.29.0.1 at 2026-02-17 13:54:03 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2700)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 6622)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 8426)
+
+
+Started POST "/posts" for 172.29.0.1 at 2026-02-17 13:54:06 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"dish_id"=>""}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 843)
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4301)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 8210)
+Completed 422 Unprocessable Content in 14ms (Views: 9.7ms | ActiveRecord: 0.6ms | Allocations: 10685)
+
+
+Started POST "/posts" for 172.29.0.1 at 2026-02-17 14:00:45 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"dish_id"=>"16"}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 496)
+  [1m[36mDish Load (0.8ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 6527)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 29511)
+Completed 422 Unprocessable Content in 69ms (Views: 17.5ms | ActiveRecord: 9.3ms | Allocations: 54610)
+
+
+Started GET "/users/4" for 172.29.0.1 at 2026-02-17 14:00:48 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:12
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 4], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1667)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5574)
+Completed 200 OK in 14ms (Views: 7.2ms | ActiveRecord: 2.2ms | Allocations: 8889)
+
+
+Started GET "/posts/new" for 172.29.0.1 at 2026-02-17 14:00:48 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2701)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 6613)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 8439)
+
+
+Started POST "/posts" for 172.29.0.1 at 2026-02-17 14:00:51 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"dish_id"=>""}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 539)
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3993)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 7886)
+Completed 422 Unprocessable Content in 17ms (Views: 12.7ms | ActiveRecord: 0.7ms | Allocations: 10370)
+
+
+Started GET "/posts/new" for 172.29.0.1 at 2026-02-17 14:06:44 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 200)
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/new.html.erb:17
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 6075)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 29041)
+Completed 200 OK in 61ms (Views: 19.5ms | ActiveRecord: 15.8ms | Allocations: 48525)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 172.29.0.1 at 2026-02-17 14:06:44 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 6ms (ActiveRecord: 0.4ms | Allocations: 2618)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 14:06:44 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 560)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4458)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 5061)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:06:44 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1096)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5055)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 6190)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:06:45 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4533)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 5113)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 14:06:46 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 214)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1728)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5597)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 6823)
+
+
+Started POST "/users" for 172.29.0.1 at 2026-02-17 14:06:47 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 646)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2014)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 5886)
+Completed 422 Unprocessable Content in 10ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 8498)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 14:14:42 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 23509)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 25409)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:14:43 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1109)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 5073)
+Completed 200 OK in 28ms (Views: 6.5ms | ActiveRecord: 6.8ms | Allocations: 13667)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 14:14:45 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 4150)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 4394)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 14:14:45 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 213)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5602)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 6821)
+
+
+Started POST "/users" for 172.29.0.1 at 2026-02-17 14:14:47 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 549)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1917)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 5772)
+Completed 422 Unprocessable Content in 10ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 8386)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:17:57 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1116)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 24060)
+Completed 200 OK in 32ms (Views: 17.6ms | ActiveRecord: 9.2ms | Allocations: 30279)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:17:58 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 4544)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 5124)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 14:17:59 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 213)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5586)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 6802)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:18:00 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4529)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5091)
+
+
+Started POST "/users" for 172.29.0.1 at 2026-02-17 14:18:01 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 549)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1917)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5772)
+Completed 422 Unprocessable Content in 16ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 8408)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 14:19:33 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 600)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 23500)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 25400)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 14:19:33 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 314)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 4153)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 4396)
+
+
+Started GET "/posts" for 172.29.0.1 at 2026-02-17 14:19:34 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mDish Load (1.0ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:12
+  [1m[36mDish Pluck (0.2ms)[0m  [1m[34mSELECT "dishes"."cuisine" FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 1], ["id", 51]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 67.9ms | Allocations: 36586)
+  Rendered layout layouts/application.html.erb (Duration: 71.2ms | Allocations: 40470)
+Completed 200 OK in 89ms (Views: 51.9ms | ActiveRecord: 22.5ms | Allocations: 47978)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:19:34 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1109)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 5062)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 6388)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 14:19:36 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 201)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1713)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 5589)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 6811)
+
+
+Started POST "/users" for 172.29.0.1 at 2026-02-17 14:19:37 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 531)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5754)
+Completed 422 Unprocessable Content in 8ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 8378)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:20:28 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1116)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 24057)
+Completed 200 OK in 22ms (Views: 13.7ms | ActiveRecord: 3.3ms | Allocations: 30277)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 14:20:30 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 201)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1715)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 5589)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 6808)
+
+
+Started POST "/users" for 172.29.0.1 at 2026-02-17 14:20:36 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 531)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5754)
+Completed 422 Unprocessable Content in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 8358)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-17 14:22:46 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 582)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 23495)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 25395)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:22:47 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1109)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 5062)
+Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 3.7ms | Allocations: 10820)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 14:22:49 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 201)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1715)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 5574)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 6796)
+
+
+Started POST "/users" for 172.29.0.1 at 2026-02-17 14:22:49 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 531)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 5791)
+Completed 422 Unprocessable Content in 10ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 8428)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:23:00 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1116)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 24049)
+Completed 200 OK in 25ms (Views: 16.8ms | ActiveRecord: 3.4ms | Allocations: 30248)
+
+
+Started GET "/posts" for 172.29.0.1 at 2026-02-17 14:23:01 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:12
+  [1m[36mDish Pluck (0.2ms)[0m  [1m[34mSELECT "dishes"."cuisine" FROM "dishes"[0m
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 1], ["id", 51]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 48.8ms | Allocations: 32149)
+  Rendered layout layouts/application.html.erb (Duration: 52.5ms | Allocations: 36129)
+Completed 200 OK in 68ms (Views: 40.6ms | ActiveRecord: 14.6ms | Allocations: 43752)
+
+
+Started GET "/users/sign_in" for 172.29.0.1 at 2026-02-17 14:23:03 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 678)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 4549)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 5125)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-17 14:23:04 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1713)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5572)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 6803)
+
+
+Started POST "/users" for 172.29.0.1 at 2026-02-17 14:23:05 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 531)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5792)
+Completed 422 Unprocessable Content in 9ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 8429)
+
+
