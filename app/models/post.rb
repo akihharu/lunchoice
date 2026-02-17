@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   end
   
   belongs_to :user
-  belongs_to :dish
+  belongs_to :dish, optional: true
   
   validates :photo, presence: true
 
