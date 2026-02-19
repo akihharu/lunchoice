@@ -32508,3 +32508,35 @@ Processing by Users::RegistrationsController#create as TURBO_STREAM
 Completed 422 Unprocessable Content in 9ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 8429)
 
 
+Started GET "/" for 172.29.0.1 at 2026-02-19 14:27:33 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2034)
+  Rendered layout layouts/application.html.erb (Duration: 86.5ms | Allocations: 45139)
+Completed 200 OK in 316ms (Views: 90.0ms | ActiveRecord: 0.0ms | Allocations: 332091)
+
+
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-02-19 14:27:36 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 216)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3284)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 7291)
+Completed 200 OK in 58ms (Views: 12.3ms | ActiveRecord: 24.7ms | Allocations: 20117)
+
+
+Started GET "/" for 172.29.0.1 at 2026-02-19 14:28:59 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4171)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4418)
+
+
