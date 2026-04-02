@@ -1,4 +1,23 @@
+/* --- top--- */
+.top-title {
+  text-align:center;
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 9em;
+  margin: 0.5em 0;
+}
+@media screen and (max-width: 768px) {
+  .top-title {
+    font-size: 4em 
+  }
+}
 
+@media screen and (max-width: 480px) {
+  .top-title {
+    font-size: 3em;
+  }
+}
 /* --- Application --- */
 body {
   margin: 0;
