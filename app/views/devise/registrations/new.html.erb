@@ -32,6 +32,16 @@
     </div>
   <% end %>
 
+    <div class="omniauth-section">
+      <div class="separator">または</div>
+      <%= button_to user_google_oauth2_omniauth_authorize_path, 
+                     method: :post, 
+                     data: { turbo: false }, 
+                     class: "btn-google" do %>
+        <span class="google-icon">G</span> Googleでログイン
+      <% end %>
+    </div>
+
   <div class="auth-links">
     <%= link_to "トップページへ", root_path %> | 
     <%= link_to "ログインへ", new_user_session_path %>
