@@ -32731,3 +32731,130 @@ Processing by TopController#index as HTML
 Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 6136)
 
 
+Started GET "/" for 172.29.0.1 at 2026-05-07 08:01:30 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 150.7ms | Allocations: 51561)
+Completed 200 OK in 417ms (Views: 153.8ms | ActiveRecord: 0.0ms | Allocations: 338549)
+
+
+Started GET "/" for 172.29.0.1 at 2026-05-07 08:05:22 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1625)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1724)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3655)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<div style="text-align: center; ">
+  <h1 class="top-title">lunchoice</h1>
+  <h2>休日のランチ、決めてみませんか？</h2>
+  
+  <p style="margin-top: 25px; font-size: 1.2em; max-width: 600px; margin: 10px auto;">
+    LUNCHOICEは、「休日のお昼、何食べる？」を解決する、<br>
+    休日のランチ決定をサポートするサービスです。
+  </p>
+  
+<%= link_to "今の気分は？", new_choice_path, class="top-choice"
+    #"display: inline-block; 
+    #margin-top: 40px; 
+    #padding: 18px 35px;
+    #font-size: 1.4em; 
+    #font-weight: bold; 
+    #color: black; 
+    #background-color: #ffe110;
+    #border-radius: 8px; 
+    #text-decoration: none;
+    #border: 2px solid #000;
+    #box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+%>
+
+<div style="margin-top: 20px;">
+  <%= link_to "みんなのランチを見る", posts_path, style: "color: #007bff; text-decoration: underline; font-weight: bold;" %>
+</div>
+
+<% unless user_signed_in? %>
+  <p style="margin-top: 50px; font-size: 0.9em;">
+    すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら", new_user_session_path, style: "color: #007bff; text-decoration: none;" %>
+  </p>
+<% end %>
+</div>
+):
+1:    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+2:    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+3:    
+4:    <div style="text-align: center; ">
+5:      <h1 class="top-title">lunchoice</h1>
+6:      <h2>休日のランチ、決めてみませんか？</h2>
+7:      
+8:      <p style="margin-top: 25px; font-size: 1.2em; max-width: 600px; margin: 10px auto;">
+9:        LUNCHOICEは、「休日のお昼、何食べる？」を解決する、<br>
+10:        休日のランチ決定をサポートするサービスです。
+11:      </p>
+12:      
+13:    <%= link_to "今の気分は？", new_choice_path, class="top-choice"
+14:        #"display: inline-block; 
+15:        #margin-top: 40px; 
+16:        #padding: 18px 35px;
+17:        #font-size: 1.4em; 
+18:        #font-weight: bold; 
+19:        #color: black; 
+20:        #background-color: #ffe110;
+21:        #border-radius: 8px; 
+22:        #text-decoration: none;
+23:        #border: 2px solid #000;
+24:        #box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+25:    %>
+26:    
+27:    <div style="margin-top: 20px;">
+28:      <%= link_to "みんなのランチを見る", posts_path, style: "color: #007bff; text-decoration: underline; font-weight: bold;" %>
+29:    </div>
+30:    
+31:    <% unless user_signed_in? %>
+32:      <p style="margin-top: 50px; font-size: 0.9em;">
+33:        すでにアカウントをお持ちですか？ <%= link_to "ログインはこちら", new_user_session_path, style: "color: #007bff; text-decoration: none;" %>
+34:      </p>
+35:    <% end %>
+36:    </div>
+  
+app/views/top/index.html.erb:13: syntax error, unexpected '='
+Started GET "/" for 172.29.0.1 at 2026-05-07 08:05:49 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 580)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 25238)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 27135)
+
+
+Started GET "/" for 172.29.0.1 at 2026-05-07 08:05:54 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4171)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4418)
+
+
+Started GET "/choices/new" for 172.29.0.1 at 2026-05-07 08:05:56 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ChoicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering choices/new.html.erb within layouts/application
+  Rendered choices/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 964)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 5032)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5610)
+
+
