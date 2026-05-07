@@ -32858,3 +32858,14 @@ Processing by ChoicesController#new as HTML
 Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5610)
 
 
+Started GET "/users/sign_up" for 172.29.0.1 at 2026-05-07 08:12:21 +0000
+Cannot render console from 172.29.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 213)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3336)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 26313)
+Completed 200 OK in 79ms (Views: 24.5ms | ActiveRecord: 27.2ms | Allocations: 39568)
+
+
