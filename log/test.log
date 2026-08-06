@@ -3418,3 +3418,643 @@ Processing by StaticPagesController#terms as HTML
   Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2639)
 Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3132)
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test1@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.064117"], ["updated_at", "2026-08-05 03:45:15.064117"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (2.8ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:45:15.082720"], ["updated_at", "2026-08-05 03:45:15.082720"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test2@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.217428"], ["updated_at", "2026-08-05 03:45:15.217428"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.1ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:45:15.220570"], ["updated_at", "2026-08-05 03:45:15.220570"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test4@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.485534"], ["updated_at", "2026-08-05 03:45:15.485534"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/125" for 127.0.0.1 at 2026-08-05 03:45:15 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"125"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 125], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Count (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 125]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 125], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered users/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2461)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 4906)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 4.7ms | Allocations: 15051)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test5@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test5@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.550966"], ["updated_at", "2026-08-05 03:45:15.550966"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.1ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:45:15.553537"], ["updated_at", "2026-08-05 03:45:15.553537"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:45:15 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2483)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3088)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 4723)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test6@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test6@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.579084"], ["updated_at", "2026-08-05 03:45:15.579084"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:45:15.581444"], ["updated_at", "2026-08-05 03:45:15.581444"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:45:15 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1138)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1558)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test7@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test7@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.593568"], ["updated_at", "2026-08-05 03:45:15.593568"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:45:15.595822"], ["updated_at", "2026-08-05 03:45:15.595822"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:45:15 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1138)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1557)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test8@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test8@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.608081"], ["updated_at", "2026-08-05 03:45:15.608081"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.1ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:45:15.610616"], ["updated_at", "2026-08-05 03:45:15.610616"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:45:15 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1138)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1557)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test9@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test9@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.623301"], ["updated_at", "2026-08-05 03:45:15.623301"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.1ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:45:15.625794"], ["updated_at", "2026-08-05 03:45:15.625794"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:45:15 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1138)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1557)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test10@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test10@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:45:15.638243"], ["updated_at", "2026-08-05 03:45:15.638243"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:45:15.640678"], ["updated_at", "2026-08-05 03:45:15.640678"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:45:15 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1138)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1557)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/terms" for 127.0.0.1 at 2026-08-05 03:45:15 +0900
+Processing by StaticPagesController#terms as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/terms.html.erb within layouts/application
+  Rendered static_pages/terms.html.erb within layouts/application (Duration: 0.5ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 764)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1257)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test1@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:47:58.748028"], ["updated_at", "2026-08-05 03:47:58.748028"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.2ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:47:58.761620"], ["updated_at", "2026-08-05 03:47:58.761620"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test2@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:47:58.830659"], ["updated_at", "2026-08-05 03:47:58.830659"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:47:58.832956"], ["updated_at", "2026-08-05 03:47:58.832956"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test4@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:48:00.839176"], ["updated_at", "2026-08-05 03:48:00.839176"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/134" for 127.0.0.1 at 2026-08-05 03:48:00 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"134"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 134]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 134], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered users/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2461)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4953)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 3.1ms | Allocations: 15097)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test5@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test5@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:48:01.554034"], ["updated_at", "2026-08-05 03:48:01.554034"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:48:01.556458"], ["updated_at", "2026-08-05 03:48:01.556458"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:48:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2483)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3124)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4759)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test6@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test6@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:48:01.576171"], ["updated_at", "2026-08-05 03:48:01.576171"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:48:01.578790"], ["updated_at", "2026-08-05 03:48:01.578790"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:48:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1174)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1594)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test7@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test7@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:48:01.591636"], ["updated_at", "2026-08-05 03:48:01.591636"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (0.9ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:48:01.593900"], ["updated_at", "2026-08-05 03:48:01.593900"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:48:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1180)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1602)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test8@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test8@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:48:01.614877"], ["updated_at", "2026-08-05 03:48:01.614877"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:48:01.617328"], ["updated_at", "2026-08-05 03:48:01.617328"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:48:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1174)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1594)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test9@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test9@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:48:01.629164"], ["updated_at", "2026-08-05 03:48:01.629164"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:48:01.631809"], ["updated_at", "2026-08-05 03:48:01.631809"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:48:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1174)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1593)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test10@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test10@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:48:01.643818"], ["updated_at", "2026-08-05 03:48:01.643818"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (0.9ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:48:01.646103"], ["updated_at", "2026-08-05 03:48:01.646103"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:48:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1174)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1593)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/terms" for 127.0.0.1 at 2026-08-05 03:48:01 +0900
+Processing by StaticPagesController#terms as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/terms.html.erb within layouts/application
+  Rendered static_pages/terms.html.erb within layouts/application (Duration: 0.5ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 802)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1295)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test1@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:23.203910"], ["updated_at", "2026-08-05 03:49:23.203910"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.4ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:49:23.243952"], ["updated_at", "2026-08-05 03:49:23.243952"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test2@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:23.312555"], ["updated_at", "2026-08-05 03:49:23.312555"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:49:23.314689"], ["updated_at", "2026-08-05 03:49:23.314689"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test4@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:24.600883"], ["updated_at", "2026-08-05 03:49:24.600883"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/143" for 127.0.0.1 at 2026-08-05 03:49:24 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"143"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 143], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 143]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 143], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered users/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2463)
+  Rendered layout layouts/application.html.erb (Duration: 221.6ms | Allocations: 107731)
+Completed 200 OK in 238ms (Views: 223.1ms | ActiveRecord: 2.8ms | Allocations: 117921)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test5@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test5@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:24.864877"], ["updated_at", "2026-08-05 03:49:24.864877"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:49:24.867026"], ["updated_at", "2026-08-05 03:49:24.867026"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:24 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2455)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 5808)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 7456)
+Started POST "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:24 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test5@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test5@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 303 See Other in 7ms (ActiveRecord: 0.7ms | Allocations: 2631)
+Started GET "/" for 127.0.0.1 at 2026-08-05 03:49:24 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  Rendered top/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2729)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5983)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.7ms | Allocations: 6488)
+Started GET "/posts/new" for 127.0.0.1 at 2026-08-05 03:49:24 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 223)
+  [1m[36mDish Load (0.8ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1873)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 5121)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 1.4ms | Allocations: 6441)
+Started POST "/posts" for 127.0.0.1 at 2026-08-05 03:49:24 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0x000072583ece51e0 @tempfile=#<Tempfile:/tmp/RackMultipart20260805-1344280-1dkbdh.png>, @content_type="image/png", @original_filename="test_image.png", @headers="content-disposition: form-data; name=\"post[photo]\"; filename=\"test_image.png\"\r\ncontent-type: image/png\r\ncontent-length: 6079682\r\n">, "dish_id"=>"132"}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (3.0ms)[0m  [1m[32mINSERT INTO "posts" ("comment", "user_id", "dish_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", nil], ["user_id", 144], ["dish_id", 132], ["created_at", "2026-08-05 03:49:24.969972"], ["updated_at", "2026-08-05 03:49:24.969972"]]
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "hjqgkt3gr9yx35ddz4wxi94o5389"], ["filename", "test_image.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 6079682], ["checksum", "tMU6CuO5jeKhKEDzWBfHqA=="], ["created_at", "2026-08-05 03:49:24.979024"]]
+  [1m[36mActiveStorage::Attachment Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 9], ["blob_id", 9], ["created_at", "2026-08-05 03:49:24.981768"]]
+  [1m[36mPost Update (0.6ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2026-08-05 03:49:24.984026"], ["id", 9]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[36m  Disk Storage (10.9ms) [0m[32mUploaded file to key: hjqgkt3gr9yx35ddz4wxi94o5389 (checksum: tMU6CuO5jeKhKEDzWBfHqA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9) to Async(default) with arguments: #<GlobalID:0x000072583fef2c48 @uri=#<URI::GID gid://app/ActiveStorage::Blob/9>>
+Redirected to http://www.example.com/posts
+Completed 302 Found in 45ms (ActiveRecord: 9.8ms | Allocations: 5158)
+Started GET "/posts" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9]   [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9] Performing ActiveStorage::AnalyzeJob (Job ID: 9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9) from Async(default) enqueued at 2026-08-04T18:49:25.000651827Z with arguments: #<GlobalID:0x00007258445e50b0 @uri=#<URI::GID gid://app/ActiveStorage::Blob/9>>
+  [1m[36mDish Load (0.6ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  [1m[36mDish Pluck (1.4ms)[0m  [1m[34mSELECT "dishes"."cuisine" FROM "dishes"[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 144]]
+  [1m[36mDish Load (0.7ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = $1[0m  [["id", 132]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 42.6ms | Allocations: 19241)
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | Allocations: 22505)
+Completed 200 OK in 51ms (Views: 41.0ms | ActiveRecord: 7.3ms | Allocations: 23058)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9] Skipping image analysis because the ruby-vips gem isn't installed
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[31mROLLBACK[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9]   [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9]   [1m[36mActiveStorage::Blob Update (4.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9] Performed ActiveStorage::AnalyzeJob (Job ID: 9a3f7ef7-65fe-46fd-abc3-93eeb5187ce9) from Async(default) in 80.86ms
+  [1m[36mTRANSACTION (26.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test6@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test6@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:25.109389"], ["updated_at", "2026-08-05 03:49:25.109389"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.3ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:49:25.112572"], ["updated_at", "2026-08-05 03:49:25.112572"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 575)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 3824)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 4260)
+Started POST "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"wrong@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "wrong@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 1.4ms | Allocations: 513)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"user"=>{"email"=>"wrong@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 569)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3783)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 4188)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test7@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test7@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:25.161900"], ["updated_at", "2026-08-05 03:49:25.161900"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (0.9ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:49:25.164166"], ["updated_at", "2026-08-05 03:49:25.164166"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3792)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4221)
+Started POST "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test7@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test7@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 303 See Other in 3ms (ActiveRecord: 0.6ms | Allocations: 839)
+Started GET "/" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  Rendered top/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3777)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 3975)
+Started GET "/posts/new" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  [1m[36mDish Load (0.7ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 547)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3793)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 1.3ms | Allocations: 4633)
+Started POST "/posts" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"dish_id"=>""}, "commit"=>"履歴を投稿する"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 608)
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1918)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5160)
+Completed 422 Unprocessable Content in 9ms (Views: 5.6ms | ActiveRecord: 1.0ms | Allocations: 6310)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test8@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test8@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:25.216220"], ["updated_at", "2026-08-05 03:49:25.216220"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (0.9ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:49:25.218669"], ["updated_at", "2026-08-05 03:49:25.218669"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 567)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3793)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 4222)
+Started POST "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test8@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test8@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 303 See Other in 3ms (ActiveRecord: 0.6ms | Allocations: 835)
+Started GET "/" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  Rendered top/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 528)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3778)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 3976)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 303 See Other in 4ms (ActiveRecord: 0.5ms | Allocations: 1433)
+Started GET "/" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 3538)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 3736)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test9@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test9@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:25.257126"], ["updated_at", "2026-08-05 03:49:25.257126"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (1.0ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:49:25.259481"], ["updated_at", "2026-08-05 03:49:25.259481"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3791)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 4220)
+Started POST "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test9@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test9@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 303 See Other in 4ms (ActiveRecord: 0.7ms | Allocations: 835)
+Started GET "/" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  Rendered top/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 504)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3754)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 3952)
+Started GET "/posts" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  [1m[36mDish Pluck (0.4ms)[0m  [1m[34mSELECT "dishes"."cuisine" FROM "dishes"[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 891)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4559)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 2.2ms | Allocations: 4894)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test10@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test10@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-08-05 03:49:25.297826"], ["updated_at", "2026-08-05 03:49:25.297826"], ["name", "テストユーザー"], ["provider", nil], ["uid", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDish Create (0.9ms)[0m  [1m[32mINSERT INTO "dishes" ("name", "cuisine", "main_dish", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "カレーライス"], ["cuisine", "japanese"], ["main_dish", nil], ["created_at", "2026-08-05 03:49:25.299768"], ["updated_at", "2026-08-05 03:49:25.299768"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3791)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4220)
+Started POST "/users/sign_in" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test10@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test10@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 303 See Other in 3ms (ActiveRecord: 0.5ms | Allocations: 835)
+Started GET "/" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  Rendered top/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 522)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3772)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 3970)
+Started GET "/dishes" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  Rendered dishes/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4199)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 4664)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/terms" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by StaticPagesController#terms as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/terms.html.erb within layouts/application
+  Rendered static_pages/terms.html.erb within layouts/application (Duration: 0.4ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3513)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3969)
+Started GET "/privacy" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by StaticPagesController#privacy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy.html.erb within layouts/application
+  Rendered static_pages/privacy.html.erb within layouts/application (Duration: 0.5ms | Allocations: 219)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3530)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3795)
+Started GET "/guide" for 127.0.0.1 at 2026-08-05 03:49:25 +0900
+Processing by StaticPagesController#guide as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/guide.html.erb within layouts/application
+  Rendered static_pages/guide.html.erb within layouts/application (Duration: 0.3ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3438)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3703)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
