@@ -139,3 +139,19 @@ https://drive.google.com/file/d/1OWYkJ-UT4m9U46u6tG7PyPQplBXyObgU/view?usp=shari
 ##  画面遷移図
 
 https://www.figma.com/design/oRpEWyPNxSvg4Jfrv3n4PV/lanchoice?node-id=0-1&p=f&t=6NEKW0OslSdO6Mv6-0
+
+---
+
+### lunchoice
+
+https://www.lunchoice.com/
+
+---
+
+現在の基本機能をさらに使いやすくするため、以下のような改善を検討しています。
+
+- ユーザーの利用状況を踏まえた料理候補の表示改善
+- より多くの料理への対応
+- 投稿機能やフィード機能のUI/UX改善
+- サービスの利用状況を踏まえた機能改善
+
